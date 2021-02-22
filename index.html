@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="node_modules/chosen-js/chosen.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impresora de tickets</title>
+    <script>
+        function focus() {
+            document.getElementById("cedula").focus();
+        }
+    </script>
+</head>
+
+<body onload=focus()>
+
+    <header>
+        <h1>Escanear codigo de barras</h1>
+    </header>
+    <section class="grid-container">
+        <div class="inputs">
+            <select name="documento" id="documento">
+                <option value="C.C.">C.C.</option>
+                <option value="T.I.">T.I.</option>
+                <option value="R.C.">R.C.</option>
+            </select>
+            <br>
+            <label for="cedula" class="labels">Numero de cedula</label>
+            <label for="apellido1">Primer Apellido</label>
+            <br>
+            <input type="text" name="cedula" id="cedula" class="column1">
+            <input type="text" name="apellido1" id="apellido1">
+            <br>
+            <label for="apellido2" class="labels">Segundo Apellido</label>
+            <label for="nombre1">Primer Nombre</label>
+            <br>
+            <input type="text" name="apellido2" id="apellido2" class="column1">
+            <input type="text" name="nombre1" id="nombre1">
+            <br>
+            <label for="apellido2" class="labels">Segundo Nombre</label>
+            <label for="nombre1">Ignorar Campos</label>
+            <br>
+            <input type="text" name="nombre2" id="nombre2" class="column1">
+            <input type="text" name="ignore1" id="ignore1">
+            <br>
+            <br>
+            <input type="text" name="ignore2" id="ignore2" class="column1">
+            <input type="text" name="ignore3" id="ignore3">
+            <br>
+            <br>
+            <input type="text" name="ignore4" id="ignore4" class="column1">
+            <input type="text" name="ignore5" id="ignore5">
+            <br>
+            <br>
+            <label for="entidad" class="entidad" id="moverEntidad">Seleccionar la entidad:</label>
+            <select name="entidad" id="entidad">
+                <option value="EPS">EPS</option>
+                <option value="PREPAGADA">PREPAGADA</option>
+                <option value="PARTICULAR">PARTICULAR</option>
+            </select>
+            <br>
+            <br>
+            <label for="estudios" class="entidad">Estudio realizado:</label>
+            <br>
+            <br>
+            <label for="" id="empujar"></label>
+            <select name="estudios" id="estudios-dropdown" class="chosen">
+                <option disabled selected value> -- Seleccione de la lista --</option>
+                <option value="RX DE CRANEO SIMPLE">RX DE CRANEO SIMPLE</option>
+                <option value="RX DE BASE DE CRANEO">RX DE BASE DE CRANEO</option>
+                <option value="RX DE SILLA TURCA">RX DE SILLA TURCA</option>
+                <option value="RX DE MASTOIDES COMPARATIVAS">RX DE MASTOIDES COMPARATIVAS</option>
+                <option value="RX DE PEÑASCOS">RX DE PEÑASCOS</option>
+                <option value="RX DE CONDUCTO AUDITIVO INTERNO">RX DE CONDUCTO AUDITIVO INTERNO</option>
+                <option value="RX DE CARA (PERFILOGRAMA)">RX DE CARA (PERFILOGRAMA)</option>
+                <option value="RX DE ORBITAS">RX DE ORBITAS</option>
+                <option value="RX DE AGUJEROS OPTICOS">RX DE AGUJEROS OPTICOS</option>
+                <option value="RX DE MALAR">RX DE MALAR</option>
+                <option value="RX DE ARCO CIGOMATICO">RX DE ARCO CIGOMATICO</option>
+                <option value="RX DE HUESOS NASALES">RX DE HUESOS NASALES</option>
+                <option value="RX DE SENOS PARANASALES">RX DE SENOS PARANASALES</option>
+                <option value="RX DE MAXILAR SUPERIOR">RX DE MAXILAR SUPERIOR</option>
+                <option value="RX DE MAXILAR INFERIOR">RX DE MAXILAR INFERIOR</option>
+                <option value="RX DE ARTICULACION TEMPOROMAXILAR [ATM]">RX DE ARTICULACION TEMPOROMAXILAR [ATM]</option>
+                <option value="RX DE TEJIDOS BLANDOS DE CUELLO">RX DE TEJIDOS BLANDOS DE CUELLO</option>
+                <option value="RX DE CAVUM FARINGEO">RX DE CAVUM FARINGEO</option>
+                <option value="RX DE COLUMNA CERVICAL">RX DE COLUMNA CERVICAL</option>
+                <option value="RX DE COLUMNA UNION CERVICO DORSAL">RX DE COLUMNA UNION CERVICO DORSAL</option>
+                <option value="RX DE COLUMNA TORACICA">RX DE COLUMNA TORACICA</option>
+                <option value="RX DE COLUMNA LUMBOSACRA">RX DE COLUMNA LUMBOSACRA</option>
+                <option value="RX DE SACRO COCCIX">RX DE SACRO COCCIX</option>
+                <option value="RX DE PANORAMICA DE COLUMNA (GONIOMETRIA U ORTOGRAMA NIÑOS)">RX DE PANORAMICA DE COLUMNA
+                    (GONIOMETRIA U ORTOGRAMA NIÑOS)</option>
+                <option value="RX DINAMICA DE COLUMNA VERTEBRAL">RX DINAMICA DE COLUMNA VERTEBRAL</option>
+                <option value="RX DE COLUMNA VERTEBRAL TOTAL (TEST DE ESCOLIOSIS)">RX DE COLUMNA VERTEBRAL TOTAL (TEST
+                    DE
+                    ESCOLIOSIS)</option>
+                <option value="RX DE ARTICULACIONES  SACROILIACAS">RX DE ARTICULACIONES SACROILIACAS</option>
+                <option value="RX DE REJA COSTAL">RX DE REJA COSTAL</option>
+                <option value="RX DE ESTERNON">RX DE ESTERNON</option>
+                <option value="RX DE TORAX">RX DE TORAX</option>
+                <option value="RX DE ARTICULACIONES ESTERNOCLAVICULARES">RX DE ARTICULACIONES ESTERNOCLAVICULARES
+                </option>
+                <option value="RX DE ABDOMEN SIMPLE">RX DE ABDOMEN SIMPLE</option>
+                <option value="RX DE ABDOMEN SIMPLE CON PROYECCIONES ADICIONALES">RX DE ABDOMEN SIMPLE CON PROYECCIONES
+                    ADICIONALES</option>
+                <option value="RX DE COLON POR ENEMA O COLON POR INGESTA">RX DE COLON POR ENEMA O COLON POR INGESTA
+                </option>
+                <option value="RX DE COLON POR ENEMA CON DOBLE CONTRASTE">RX DE COLON POR ENEMA CON DOBLE CONTRASTE
+                </option>
+                <option value="RX DE HUESOS LARGOS SERIE COMPLETA">RX DE HUESOS LARGOS SERIE COMPLETA</option>
+                <option value="RX PARA DETECTAR EDAD OSEA">RX PARA DETECTAR EDAD OSEA</option>
+                <option value="RX DE OMOPLATO">RX DE OMOPLATO</option>
+                <option value="RX DE CLAVICULA">RX DE CLAVICULA</option>
+                <option value="RX DE HUMERO">RX DE HUMERO</option>
+                <option value="RX DE ANTEBRAZO">RX DE ANTEBRAZO</option>
+                <option value="RX COMPARATIVAS DE EXTREMIDADES SUPERIORES">RX COMPARATIVAS DE EXTREMIDADES SUPERIORES
+                </option>
+                <option value="RX DE ARTICULACIONES ACROMIO CLAVICULARES COMPARATIVAS">RX DE ARTICULACIONES ACROMIO
+                    CLAVICULARES COMPARATIVAS</option>
+                <option value="RX DE HOMBRO">RX DE HOMBRO</option>
+                <option value="RX DE CODO">RX DE CODO</option>
+                <option value="RX DE PUÑO O MUÑECA">RX DE PUÑO O MUÑECA</option>
+                <option value="RX DE MANO">RX DE MANO</option>
+                <option value="RX PARA MEDICICION DE MIEMBROS INFERIORES">RX PARA MEDICICION DE MIEMBROS INFERIORES
+                </option>
+                <option value="RX COMPARATIVA DE PIES CON APOYO">RX COMPARATIVA DE PIES CON APOYO</option>
+                <option value="RX PANORAMICA DE MIEMBROS INFERIORES">RX PANORAMICA DE MIEMBROS INFERIORES</option>
+                <option value="RX DE FEMUR">RX DE FEMUR</option>
+                <option value="RX DE PIERNA">RX DE PIERNA</option>
+                <option value="RX DE PIE">RX DE PIE</option>
+                <option value="RX DE CALCANEO">RX DE CALCANEO</option>
+                <option value="RX DE CADERA O ARTICULACION COXO-FEMORAL">RX DE CADERA O ARTICULACION COXO-FEMORAL
+                </option>
+                <option value="RX DE CADERA COMPARATIVA">RX DE CADERA COMPARATIVA</option>
+                <option value="RX DE RODILLA">RX DE RODILLA</option>
+                <option value="RX DE RODILLAS COMPARATIVAS POSICION VERTICAL">RX DE RODILLAS COMPARATIVAS POSICION
+                    VERTICAL
+                </option>
+                <option value="RX DE TANGENCIAL O AXIAL DE ROTULA">RX DE TANGENCIAL O AXIAL DE ROTULA</option>
+                <option value="RX DE TOBILLO">RX DE TOBILLO</option>
+                <option value="RX DE COMPARATIVAS DE EXTREMIDADES INFERIORES">RX DE COMPARATIVAS DE EXTREMIDADES
+                    INFERIORES
+                </option>
+                <option value="RX EN EXTREMIDADES PROYECCIONES ADICIONALES">RX EN EXTREMIDADES PROYECCIONES ADICIONALES
+                </option>
+                <option value="MAMOGRAFIA UNILATERAL O DE PIEZA QUIRURGICA">MAMOGRAFIA UNILATERAL O DE PIEZA QUIRURGICA
+                </option>
+                <option value="MAMOGRAFIA BILATERAL">MAMOGRAFIA BILATERAL</option>
+                <option value="PIELOGRAFIA A TRAVÉS DE TUBO O NEFROSTOMIA">PIELOGRAFIA A TRAVÉS DE TUBO O NEFROSTOMIA
+                </option>
+                <option value="PIELOGRAFIA RETROGRADA O ANTEROGRADA">PIELOGRAFIA RETROGRADA O ANTEROGRADA</option>
+                <option value="CISTOGRAFIA CON PROYECCIONES OBLICUAS">CISTOGRAFIA CON PROYECCIONES OBLICUAS</option>
+                <option value="URETROCISTOGRAFIA">URETROCISTOGRAFIA</option>
+                <option value="URETROCISTOGRAFIA MICCIONAL">URETROCISTOGRAFIA MICCIONAL</option>
+                <option value="URETROCISTOGRAFIA RETROGRADA">URETROCISTOGRAFIA RETROGRADA</option>
+                <option value="URETROGRAFIA RETROGRADA">URETROGRAFIA RETROGRADA</option>
+                <option value="TAC DE CRANEO SIMPLE">TAC DE CRANEO SIMPLE</option>
+                <option value="TAC DE CRANEO CON CONTRASTE">TAC DE CRANEO CON CONTRASTE</option>
+                <option value="TAC DE CRANEO SIMPLE Y CON CONTRASTE">TAC DE CRANEO SIMPLE Y CON CONTRASTE</option>
+                <option value="TAC DE SILLA TURCA (HIPOFISIS)">TAC DE SILLA TURCA (HIPOFISIS)</option>
+                <option value="TAC DE ORBITAS">TAC DE ORBITAS</option>
+                <option value="TAC DE OIDO, PEÑASCO Y CONDUCTO AUDITIVO">TAC DE OIDO, PEÑASCO Y CONDUCTO AUDITIVO
+                </option>
+                <option value="TAC DE SENOS PARANASALES O CARA">TAC DE SENOS PARANASALES O CARA</option>
+                <option value="TAC DE RINOFARINGE">TAC DE RINOFARINGE</option>
+                <option value="TAC DE ARTICULACION TEMPORO MANDIBULAR (BILATERAL)">TAC DE ARTICULACION TEMPORO
+                    MANDIBULAR
+                    (BILATERAL)</option>
+                <option value="TAC DE CUELLO">TAC DE CUELLO</option>
+                <option value="TAC DE LARINGE">TAC DE LARINGE</option>
+                <option value="TAC DE COLUMNA SEGMENTOS CERVICAL, TORACICO, LUMBAR O SACRO POR CADA NIVEL">TAC DE
+                    COLUMNA
+                    SEGMENTOS CERVICAL, TORACICO, LUMBAR O SACRO POR CADA NIVEL</option>
+                <option value="TAC DE COLUMNA SEGMENTOS CERVICAL, TORACICO, LUMBAR O SACRO, COMPLEMENTO A MIELOGRAFIA">
+                    TAC
+                    DE COLUMNA SEGMENTOS CERVICAL, TORACICO, LUMBAR O SACRO, COMPLEMENTO A MIELOGRAFIA</option>
+                <option value="TAC DE TORAX">TAC DE TORAX</option>
+                <option value="TAC DE TORAX EXTENDIDO AL ABDOMEN SUPERIOR CON SUPRARRENALES">TAC DE TORAX EXTENDIDO AL
+                    ABDOMEN SUPERIOR CON SUPRARRENALES</option>
+                <option value="TAC DE ABDOMEN SUPERIOR">TAC DE ABDOMEN SUPERIOR</option>
+                <option value="TAC DE ABDOMEN Y PELVIS (ABDOMEN TOTAL)">TAC DE ABDOMEN Y PELVIS (ABDOMEN TOTAL)</option>
+                <option value="TAC DE CADERA">TAC DE CADERA</option>
+                <option value="TAC DE VIAS URINARIAS">TAC DE VIAS URINARIAS</option>
+                <option value="TAC DE PELVIS">TAC DE PELVIS</option>
+                <option value="TAC DE MIEMBROS SUPERIORES Y ARTICULACIONES">TAC DE MIEMBROS SUPERIORES Y ARTICULACIONES
+                </option>
+                <option value="TAC DE MIEMBROS INFERIORES Y ARTICULACIONES">TAC DE MIEMBROS INFERIORES Y ARTICULACIONES
+                </option>
+                <option value="TAC DE MIEMBROS INFERIORES (ANTEVERSIONES FEMORAL O TORSION TIBIAL)">TAC DE MIEMBROS
+                    INFERIORES (ANTEVERSIONES FEMORAL O TORSION TIBIAL)</option>
+                <option value="TAC DE MIEMBROS INFERIORES (AXIALES DE ROTULA O LONGITUD DE MIEMBROS INFERIORES)">TAC DE
+                    MIEMBROS INFERIORES (AXIALES DE ROTULA O LONGITUD DE MIEMBROS INFERIORES)</option>
+                <option value="TAC EN RECONSTRUCCION TRIDIMENSIONAL">TAC EN RECONSTRUCCION TRIDIMENSIONAL</option>
+                <option value="TAC COMO GUIA PARA PROCEDIMIENTOS">TAC COMO GUIA PARA PROCEDIMIENTOS</option>
+            </select>
+            <br>
+            <br>
+            <button value="Solicitar" id="btn1" onclick="impresora()">Solicitar</button>
+            <button value="Imprimir" id="btn2" onclick="arroz()">Imprimir</button>
+        </div>
+        <div class="outputs">
+            <iframe style="width: 350px; height: 540px" id="pdf"></iframe>
+            <img id="itf">
+        </div>
+    </section>
+    <footer>
+        <div class="contenedor">
+            <img src="assets/logo1.png" alt="" srcset="" id="logo">
+        </div>
+    </footer>
+    <script>
+        if (typeof module === 'object') {
+            window.module = module;
+            module = undefined;
+        }
+    </script>
+    <script src="JsBarcode.all.min.js"></script>
+    <script src="printer.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/chosen-js/chosen.jquery.min.js"></script>
+    <script src="data.js"></script>
+    <script src="renderer.js"></script>
+</body>
+
+</html>
