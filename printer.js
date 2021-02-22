@@ -1,4 +1,5 @@
 const { jsPDF } = require("jspdf");
+const { print } = require('pdf-to-printer');
 async function impresora() {
     var entidad = document.getElementById('entidad').value;
     var fecha = new Date();
@@ -96,7 +97,7 @@ async function impresora() {
     const doc = new jsPDF({
         orientation: "portrait",
         unit: "mm",
-        format: [80, 120]
+        format: [80, 100]
     });
     doc.setFontSize(13);
     doc.setFont("helvetica", 'bold')
@@ -120,7 +121,7 @@ async function impresora() {
     doc.setFontSize(10)
     doc.text('Fecha de realizacion: '+fecha.toLocaleDateString(),2.5, 70)
     doc.text('Fecha de entrega: '+newFecha,2.5, 80)
-    doc.addImage(img.src, 'PNG', 2, 100)
+    doc.addImage(img.src, 'PNG', 2, 82)
     doc.save("resultados.pdf"); // will save the file in the current working directory
     
 
@@ -142,6 +143,18 @@ async function impresora() {
     document.getElementById("ignore4").value = ""
     document.getElementById("ignore5").value = ""
     document.getElementById("cedula").focus();
+
+    
+
+    const options = {
+    win32:['-print-settings "fit"']
+    }
+    function arroz() {
+    
+    print('resultados.pdf', options).then(console.log).catch(console.error);
+    
+    }
+    arroz();
     // console.log(documento);
     // console.log(cedula);
     // console.log(apellido1);

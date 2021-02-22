@@ -68,7 +68,7 @@ function handleSquirrelEvent(application) {
 };
 require('update-electron-app')({
     repo: 'juancarlord/MundoPrinter',
-    updateInterval: '1 hour'
+    updateInterval: '10 minutes'
   })
 function createWindow() {
     const win = new BrowserWindow({
