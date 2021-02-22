@@ -142,14 +142,14 @@ async function impresora() {
     document.getElementById("ignore4").value = ""
     document.getElementById("ignore5").value = ""
     document.getElementById("cedula").focus();
-    console.log(documento);
-    console.log(cedula);
-    console.log(apellido1);
-    console.log(apellido2);
-    console.log(nombre1);
-    console.log(nombre2);
-    console.log(entidad);
-    console.log(estudios);
-    console.log(fecha);
-    console.log(newFecha);
+    // console.log(documento);
+    // console.log(cedula);
+    // console.log(apellido1);
+    // console.log(apellido2);
+    // console.log(nombre1);
+    // console.log(nombre2);
+    // console.log(entidad);
+    // console.log(estudios);
+    // console.log(fecha);
+    // console.log(newFecha);
 }

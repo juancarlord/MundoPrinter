@@ -72,7 +72,7 @@ require('update-electron-app')({
   })
 function createWindow() {
     const win = new BrowserWindow({
-        width: 900,
+        width: 500,
         height: 760,
         icon:'assets/hires.ico',
         resizable: false,
