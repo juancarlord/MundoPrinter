@@ -1,4 +1,4 @@
 $(".chosen").chosen({
-    no_results_text: "El estudio no existe",
-    max_shown_results: 4
+    no_results_text: "Usted esta intentando buscar: "
+    // max_shown_results: 4
 });
