@@ -1,4 +1,9 @@
 const { app, BrowserWindow } = require('electron')
+require('update-electron-app')({
+    repo: 'juancarlord/MundoPrinter',
+    updateInterval: '10 minutes',
+    notifyUser: true
+  })
 if (handleSquirrelEvent(app)) {
     // squirrel event handled and app will exit in 1000ms, so don't do anything else
     return;
@@ -66,10 +71,7 @@ function handleSquirrelEvent(application) {
             return true;
     }
 };
-require('update-electron-app')({
-    repo: 'juancarlord/MundoPrinter',
-    updateInterval: '10 minutes'
-  })
+
 function createWindow() {
     const win = new BrowserWindow({
         width: 500,
