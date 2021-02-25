@@ -97,7 +97,7 @@ async function impresora() {
     const doc = new jsPDF({
         orientation: "portrait",
         unit: "mm",
-        format: [80, 100]
+        format: [80, 92]
     });
     doc.setFontSize(13);
     doc.setFont("helvetica", 'bold')
