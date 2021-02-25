@@ -120,8 +120,8 @@ async function impresora() {
     doc.text(estudioSplit, 2.5, 55)
     doc.setFontSize(10)
     doc.text('Fecha de realizacion: '+fecha.toLocaleDateString(),2.5, 70)
-    doc.text('Fecha de entrega: '+newFecha,2.5, 80)
-    doc.addImage(img.src, 'PNG', 2, 82)
+    doc.text('Fecha de entrega: '+newFecha,2.5, 75)
+    doc.addImage(img.src, 'PNG', 2, 76)
     doc.save("resultados.pdf"); // will save the file in the current working directory
     
 
