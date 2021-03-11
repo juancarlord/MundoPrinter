@@ -1,7 +1,7 @@
 const { app, BrowserWindow } = require('electron')
 require('update-electron-app')({
     repo: 'juancarlord/MundoPrinter',
-    updateInterval: '10 minutes',
+    updateInterval: '5 minutes',
     notifyUser: true
   })
 if (handleSquirrelEvent(app)) {
