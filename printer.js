@@ -97,11 +97,11 @@ async function impresora() {
     const doc = new jsPDF({
         orientation: "portrait",
         unit: "mm",
-        format: [80, 92]
+        format: [78, 120]
     });
     doc.setFontSize(13);
     doc.setFont("helvetica", 'bold')
-    doc.text("MUNDO RADIOLOGICO S.A.S", 7, 8);
+    doc.text("MUNDO RADIOLOGICO S.A.S", 7, 10);
     doc.setFontSize(10)
     doc.text('TICKET DE RESULTADOS', 16, 15)
     doc.text(entidad, 50, 25)
@@ -122,8 +122,14 @@ async function impresora() {
     doc.text('Fecha de realizacion: '+fecha.toLocaleDateString(),2.5, 70)
     doc.text('Fecha de entrega: '+newFecha,2.5, 75)
     doc.addImage(img.src, 'PNG', 2, 76)
+    doc.setFontSize(6)
+    doc.text('Reclame sus resultados de L - V 8:00 am a 11:30 y de 2:00 pm a 5:30 pm ',2.5, 95)
+    doc.text('S 8:00 am a 11:30am',30, 98)
+    doc.text('Los resultados se entregan unicamente con este ticket o con su documento ',2.5, 101)
+    doc.text('de identificacion', 39.5, 104, 'center')
+    doc.text('Si requiere copia de sus resultados debe cancelar el valor correspondiente.',2.5, 107)
     doc.save("resultados.pdf"); // will save the file in the current working directory
-    
+    doc.close();
 
     // const pdfDoc = await PDFLib.PDFDocument.create();
     // const page = pdfDoc.addPage([350, 400]);
