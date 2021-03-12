@@ -179,7 +179,7 @@ async function impresora() {
     const doc = new jsPDF({
         orientation: "portrait",
         unit: "mm",
-        format: [72, 265]
+        format: [72, 300]
     });
     doc.setFontSize(12);
     doc.setFont("helvetica", 'bold')
@@ -207,19 +207,19 @@ async function impresora() {
         doc.text(newFecha, 2.5, 80)
         doc.addImage(img.src, 'PNG', 2, 81)
         doc.setFontSize(6)
-        doc.text('Reclame sus resultados de L - V 8:00 am a 11:30 y de 2:00 pm a 5:30 pm ',2, 100)
-        doc.text('S 8:00 am a 11:30am',36, 103, 'center')
-        doc.text('Los resultados se entregan unicamente con este ticket o \n con su documento de identificacion',36, 106, 'center')
-        doc.text('Si requiere copia de sus resultados debe cancelar \n el valor correspondiente.',36, 112, 'center')
+        doc.text('Reclamación de resultados: \nLunes a Viernes 8:00 am a 11:30 y de 2:00 pm a 5:30 pm ',36, 100,'center')
+        doc.text('Sábados de 8:00 am a 11:30am',36, 106, 'center')
+        doc.text('Los resultados se entregan UNICAMENTE con este ticket o \n con su documento de identificación',36, 109, 'center')
+        doc.text('Si requiere copia de sus resultados debe cancelar \n el valor correspondiente.',36, 115, 'center')
     }
     else {
     doc.text('Fecha de entrega: '+newFecha,2.5, 75)
     doc.addImage(img.src, 'PNG', 2, 76)
     doc.setFontSize(6)
-    doc.text('Reclame sus resultados de L - V 8:00 am a 11:30 y de 2:00 pm a 5:30 pm ',2, 95)
-    doc.text('S 8:00 am a 11:30am',36, 98, 'center')
-    doc.text('Los resultados se entregan unicamente con este ticket o \n con su documento de identificacion',36, 101, 'center')
-    doc.text('Si requiere copia de sus resultados debe cancelar \n el valor correspondiente.',36, 107, 'center')
+    doc.text('Reclamación de resultados: \nLunes a Viernes 8:00 am a 11:30 y de 2:00 pm a 5:30 pm ',36, 95,'center')
+    doc.text('Sábados de 8:00 am a 11:30am',36, 101, 'center')
+    doc.text('Los resultados se entregan UNICAMENTE con este ticket o \n con su documento de identificación',36, 104, 'center')
+    doc.text('Si requiere copia de sus resultados debe cancelar \n el valor correspondiente.',36, 110, 'center')
     }
     doc.save("resultados.pdf"); // will save the file in the current working directory
     doc.close();

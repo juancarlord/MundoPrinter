@@ -1,6 +1,6 @@
 {
   "name": "mundoprint",
-  "version": "2.1.8",
+  "version": "2.2.0",
   "description": "Aplicacion para Mundo Radiologico SAS",
   "main": "main.js",
   "scripts": {
@@ -67,7 +67,8 @@
               "owner": "juancarlord",
               "name": "MundoPrinter"
             },
-            "prerelease": false
+            "prerelease": false,
+            "draft": false
           }
         }
       ]
