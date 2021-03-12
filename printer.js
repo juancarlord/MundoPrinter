@@ -3,7 +3,7 @@ const { print } = require('pdf-to-printer');
 async function impresora() {
     var entidad = document.getElementById('entidad').value;
     var fecha = new Date();
-    if (entidad != "EPS") {
+    if (entidad == "PREPAGADA") {
         switch(fecha.getDay()){
             case 1:
                 var recogerNormal = new Date();
@@ -41,7 +41,7 @@ async function impresora() {
         }
         
     }
-    else{
+    else if(entidad == 'EPS'){
         switch(fecha.getDay()){
             case 1:
                 var recogerNormal = new Date();
@@ -78,6 +78,88 @@ async function impresora() {
                 break;
         }
     }
+    else if (entidad == "PARTICULAR") {
+            switch (fecha.getDay()) {
+                case 1:
+                    var recogerNormal = new Date();
+                    var hour = recogerNormal.getHours()
+                    if (hour >= 12) {
+                        recogerNormal.setDate(recogerNormal.getDate() + 1);
+                        newFecha = recogerNormal.toLocaleDateString();
+                        document.getElementById('test').innerHTML = newFecha;
+                        console.log(newFecha + " " + hour);
+                    }
+                    recogerNormal.setDate(recogerNormal.getDate());
+                    newFecha = recogerNormal.toLocaleDateString() + " de 2:00pm a 5:30pm";
+                    console.log(newFecha);
+                    break;
+                case 2:
+                    var recogerNormal = new Date();
+                    var hour = recogerNormal.getHours()
+                    if (hour >= 12) {
+                        recogerNormal.setDate(recogerNormal.getDate() + 1);
+                        newFecha = recogerNormal.toLocaleDateString();
+                        document.getElementById('test').innerHTML = newFecha;
+                        console.log(newFecha + " " + hour);
+                    }
+                    recogerNormal.setDate(recogerNormal.getDate());
+                    newFecha = recogerNormal.toLocaleDateString() + " de 2:00pm a 5:30pm";
+                    console.log(newFecha);
+                    break;
+                case 3:
+                    var recogerNormal = new Date();
+                    var hour = recogerNormal.getHours()
+                    if (hour >= 12) {
+                        recogerNormal.setDate(recogerNormal.getDate() + 1);
+                        newFecha = recogerNormal.toLocaleDateString();
+                        document.getElementById('test').innerHTML = newFecha;
+                        console.log(newFecha + " " + hour);
+                    }
+                    recogerNormal.setDate(recogerNormal.getDate());
+                    newFecha = recogerNormal.toLocaleDateString() + " de 2:00pm a 5:30pm";
+                    console.log(newFecha);
+                    break;
+                case 4:
+                    var recogerNormal = new Date();
+                    var hour = recogerNormal.getHours()
+                    if (hour >= 12) {
+                        recogerNormal.setDate(recogerNormal.getDate() + 1);
+                        newFecha = recogerNormal.toLocaleDateString();
+                        document.getElementById('test').innerHTML = newFecha;
+                        console.log(newFecha + " " + hour);
+                    }
+                    recogerNormal.setDate(recogerNormal.getDate());
+                    newFecha = recogerNormal.toLocaleDateString() + " de 2:00pm a 5:30pm";
+                    console.log(newFecha);
+                    break;
+                case 5:
+                    var recogerNormal = new Date();
+                    var hour = recogerNormal.getHours()
+                    if (hour >= 12) {
+                        recogerNormal.setDate(recogerNormal.getDate() + 1);
+                        newFecha = recogerNormal.toLocaleDateString();
+                        document.getElementById('test').innerHTML = newFecha;
+                        console.log(newFecha + " " + hour);
+                    }
+                    recogerNormal.setDate(recogerNormal.getDate());
+                    newFecha = recogerNormal.toLocaleDateString() + " de 2:00pm a 5:30pm";
+                    console.log(newFecha);
+                    break;
+                case 6:
+                    var recogerNormal = new Date();
+                    recogerNormal.setDate(recogerNormal.getDate() + 2);
+                    newFecha = recogerNormal.toLocaleDateString();
+                    document.getElementById('test').innerHTML = newFecha;
+                    console.log(newFecha);
+                    break;
+                default:
+                    newFecha = 'Los domingos no atendemos :)';
+                    document.getElementById('test').innerHTML = newFecha;
+                    console.log(newFecha);
+                    break;
+            }
+
+        }
 
 
     var documento = document.getElementById('documento').value;
@@ -89,7 +171,7 @@ async function impresora() {
     
     var estudios = document.getElementById('estudios-dropdown').value;
     var nombreCompleto = nombre1+' '+nombre2+' '+apellido1+' '+apellido2;
-    var lineHeight = 1.2, pageWidth = 80, margin = 0.5, maxLineWidth = pageWidth - margin *2, oneLineHeight = (10*lineHeight)/72;
+    var lineHeight = 1.2, pageWidth = 72, margin = 0.5, maxLineWidth = pageWidth - margin *2, oneLineHeight = (10*lineHeight)/72;
     document.getElementById("itf").style.display = "none";
     JsBarcode("#itf", cedula, {format: "code128", width: 2, height: 50, displayValue: false});
 
@@ -97,12 +179,12 @@ async function impresora() {
     const doc = new jsPDF({
         orientation: "portrait",
         unit: "mm",
-        format: [78, 120]
+        format: [72, 220]
     });
-    doc.setFontSize(13);
+    doc.setFontSize(12);
     doc.setFont("helvetica", 'bold')
     doc.text("MUNDO RADIOLOGICO S.A.S", 7, 10);
-    doc.setFontSize(10)
+    doc.setFontSize(9)
     doc.text('TICKET DE RESULTADOS', 16, 15)
     doc.text(entidad, 50, 25)
     doc.text('Nombre del paciente', 2.5, 30)
@@ -120,14 +202,25 @@ async function impresora() {
     doc.text(estudioSplit, 2.5, 55)
     doc.setFontSize(10)
     doc.text('Fecha de realizacion: '+fecha.toLocaleDateString(),2.5, 70)
+    if(newFecha.length > 12){
+        doc.text('Fecha de entrega: ',2.5, 75)    
+        doc.text(newFecha, 2.5, 80)
+        doc.addImage(img.src, 'PNG', 2, 81)
+        doc.setFontSize(6)
+        doc.text('Reclame sus resultados de L - V 8:00 am a 11:30 y de 2:00 pm a 5:30 pm ',2, 100)
+        doc.text('S 8:00 am a 11:30am',36, 103, 'center')
+        doc.text('Los resultados se entregan unicamente con este ticket o \n con su documento de identificacion',36, 106, 'center')
+        doc.text('Si requiere copia de sus resultados debe cancelar \n el valor correspondiente.',36, 112, 'center')
+    }
+    else {
     doc.text('Fecha de entrega: '+newFecha,2.5, 75)
     doc.addImage(img.src, 'PNG', 2, 76)
     doc.setFontSize(6)
-    doc.text('Reclame sus resultados de L - V 8:00 am a 11:30 y de 2:00 pm a 5:30 pm ',2.5, 95)
-    doc.text('S 8:00 am a 11:30am',30, 98)
-    doc.text('Los resultados se entregan unicamente con este ticket o con su documento ',2.5, 101)
-    doc.text('de identificacion', 39.5, 104, 'center')
-    doc.text('Si requiere copia de sus resultados debe cancelar el valor correspondiente.',2.5, 107)
+    doc.text('Reclame sus resultados de L - V 8:00 am a 11:30 y de 2:00 pm a 5:30 pm ',2, 95)
+    doc.text('S 8:00 am a 11:30am',36, 98, 'center')
+    doc.text('Los resultados se entregan unicamente con este ticket o \n con su documento de identificacion',36, 101, 'center')
+    doc.text('Si requiere copia de sus resultados debe cancelar \n el valor correspondiente.',36, 107, 'center')
+    }
     doc.save("resultados.pdf"); // will save the file in the current working directory
     doc.close();
 
