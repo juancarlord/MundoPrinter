@@ -86,8 +86,8 @@ async function impresora() {
                     if (hour >= 12) {
                         recogerNormal.setDate(recogerNormal.getDate() + 1);
                         newFecha = recogerNormal.toLocaleDateString();
-                        document.getElementById('test').innerHTML = newFecha;
                         console.log(newFecha + " " + hour);
+                        break;
                     }
                     recogerNormal.setDate(recogerNormal.getDate());
                     newFecha = recogerNormal.toLocaleDateString() + " de 2:00pm a 5:30pm";
@@ -99,8 +99,8 @@ async function impresora() {
                     if (hour >= 12) {
                         recogerNormal.setDate(recogerNormal.getDate() + 1);
                         newFecha = recogerNormal.toLocaleDateString();
-                        document.getElementById('test').innerHTML = newFecha;
                         console.log(newFecha + " " + hour);
+                        break;
                     }
                     recogerNormal.setDate(recogerNormal.getDate());
                     newFecha = recogerNormal.toLocaleDateString() + " de 2:00pm a 5:30pm";
@@ -112,8 +112,8 @@ async function impresora() {
                     if (hour >= 12) {
                         recogerNormal.setDate(recogerNormal.getDate() + 1);
                         newFecha = recogerNormal.toLocaleDateString();
-                        document.getElementById('test').innerHTML = newFecha;
                         console.log(newFecha + " " + hour);
+                        break;
                     }
                     recogerNormal.setDate(recogerNormal.getDate());
                     newFecha = recogerNormal.toLocaleDateString() + " de 2:00pm a 5:30pm";
@@ -125,8 +125,8 @@ async function impresora() {
                     if (hour >= 12) {
                         recogerNormal.setDate(recogerNormal.getDate() + 1);
                         newFecha = recogerNormal.toLocaleDateString();
-                        document.getElementById('test').innerHTML = newFecha;
                         console.log(newFecha + " " + hour);
+                        break;
                     }
                     recogerNormal.setDate(recogerNormal.getDate());
                     newFecha = recogerNormal.toLocaleDateString() + " de 2:00pm a 5:30pm";
@@ -138,8 +138,8 @@ async function impresora() {
                     if (hour >= 12) {
                         recogerNormal.setDate(recogerNormal.getDate() + 1);
                         newFecha = recogerNormal.toLocaleDateString();
-                        document.getElementById('test').innerHTML = newFecha;
                         console.log(newFecha + " " + hour);
+                        break;
                     }
                     recogerNormal.setDate(recogerNormal.getDate());
                     newFecha = recogerNormal.toLocaleDateString() + " de 2:00pm a 5:30pm";
@@ -149,12 +149,10 @@ async function impresora() {
                     var recogerNormal = new Date();
                     recogerNormal.setDate(recogerNormal.getDate() + 2);
                     newFecha = recogerNormal.toLocaleDateString();
-                    document.getElementById('test').innerHTML = newFecha;
                     console.log(newFecha);
                     break;
                 default:
                     newFecha = 'Los domingos no atendemos :)';
-                    document.getElementById('test').innerHTML = newFecha;
                     console.log(newFecha);
                     break;
             }
