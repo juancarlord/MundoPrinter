@@ -179,7 +179,7 @@ async function impresora() {
     const doc = new jsPDF({
         orientation: "portrait",
         unit: "mm",
-        format: [72, 220]
+        format: [72, 265]
     });
     doc.setFontSize(12);
     doc.setFont("helvetica", 'bold')
