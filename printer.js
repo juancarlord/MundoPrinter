@@ -136,7 +136,7 @@ async function impresora() {
                     var recogerNormal = new Date();
                     var hour = recogerNormal.getHours()
                     if (hour >= 12) {
-                        recogerNormal.setDate(recogerNormal.getDate() + 1);
+                        recogerNormal.setDate(recogerNormal.getDate() + 3);
                         newFecha = recogerNormal.toLocaleDateString();
                         console.log(newFecha + " " + hour);
                         break;
