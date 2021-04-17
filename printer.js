@@ -27,7 +27,7 @@ async function impresora() {
                 break;
             case 5:
                 var recogerNormal = new Date();
-                recogerNormal.setDate(recogerNormal.getDate()+1);
+                recogerNormal.setDate(recogerNormal.getDate()+3);
                 newFecha = recogerNormal.toLocaleDateString();
                 break;
             case 6:
