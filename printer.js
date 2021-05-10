@@ -1,6 +1,11 @@
 const { jsPDF } = require("jspdf");
 const { print } = require('pdf-to-printer');
 async function impresora() {
+    var festivos = ["5/17/2021", "6/3/2021", "6/14/2021", "7/5/2021", "7/20/2021", "8/16/2021", "10/18/2021",
+    "11/1/2021", "11/15/2021", "12/8/2021", "1/10/2022", "3/21/2022", "4/14/2022", "4/15/2022", "5/17/2022",
+    "6/20/2022", "6/27/2022", "7/4/2022", "7/20/2022", "8/15/2022", "10/17/2022", "11/7/2022", "11/14/2022",
+    "12/8/2022"
+    ]
     var entidad = document.getElementById('entidad').value;
     var fecha = new Date();
     if (entidad == "PREPAGADA") {
@@ -8,31 +13,67 @@ async function impresora() {
             case 1:
                 var recogerNormal = new Date();
                 recogerNormal.setDate(recogerNormal.getDate()+1);
+                if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                    newFecha = recogerNormal
+                    newFecha.setDate(newFecha.getDate()+1)
+                    newFecha = newFecha.toLocaleDateString()
+                    break;
+                }
                 newFecha = recogerNormal.toLocaleDateString();
                 break;
             case 2:
                 var recogerNormal = new Date();
                 recogerNormal.setDate(recogerNormal.getDate()+1);
+                if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                    newFecha = recogerNormal
+                    newFecha.setDate(newFecha.getDate()+1)
+                    newFecha = newFecha.toLocaleDateString()
+                    break;
+                }
                 newFecha = recogerNormal.toLocaleDateString();
                 break;
             case 3:
                 var recogerNormal = new Date();
                 recogerNormal.setDate(recogerNormal.getDate()+1);
+                if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                    newFecha = recogerNormal
+                    newFecha.setDate(newFecha.getDate()+1)
+                    newFecha = newFecha.toLocaleDateString()
+                    break;
+                }
                 newFecha = recogerNormal.toLocaleDateString();
                 break;
             case 4:
                 var recogerNormal = new Date();
                 recogerNormal.setDate(recogerNormal.getDate()+1);
+                if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                    newFecha = recogerNormal
+                    newFecha.setDate(newFecha.getDate()+1)
+                    newFecha = newFecha.toLocaleDateString()
+                    break;
+                }
                 newFecha = recogerNormal.toLocaleDateString();
                 break;
             case 5:
                 var recogerNormal = new Date();
                 recogerNormal.setDate(recogerNormal.getDate()+3);
+                if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                    newFecha = recogerNormal
+                    newFecha.setDate(newFecha.getDate()+1)
+                    newFecha = newFecha.toLocaleDateString()
+                    break;
+                }
                 newFecha = recogerNormal.toLocaleDateString();
                 break;
             case 6:
                 var recogerNormal = new Date();
                 recogerNormal.setDate(recogerNormal.getDate()+2);
+                if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                    newFecha = recogerNormal
+                    newFecha.setDate(newFecha.getDate()+1)
+                    newFecha = newFecha.toLocaleDateString()
+                    break;
+                }
                 newFecha = recogerNormal.toLocaleDateString();
                 break;
             default:
@@ -46,31 +87,67 @@ async function impresora() {
             case 1:
                 var recogerNormal = new Date();
                 recogerNormal.setDate(recogerNormal.getDate()+3);
+                if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                    newFecha = recogerNormal
+                    newFecha.setDate(newFecha.getDate()+1)
+                    newFecha = newFecha.toLocaleDateString()
+                    break;
+                }
                 newFecha = recogerNormal.toLocaleDateString();
                 break;
             case 2:
                 var recogerNormal = new Date();
                 recogerNormal.setDate(recogerNormal.getDate()+3);
+                if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                    newFecha = recogerNormal
+                    newFecha.setDate(newFecha.getDate()+3)
+                    newFecha = newFecha.toLocaleDateString()
+                    break;
+                }
                 newFecha = recogerNormal.toLocaleDateString();
                 break;
             case 3:
                 var recogerNormal = new Date();
                 recogerNormal.setDate(recogerNormal.getDate()+5);
+                if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                    newFecha = recogerNormal
+                    newFecha.setDate(newFecha.getDate()+1)
+                    newFecha = newFecha.toLocaleDateString()
+                    break;
+                }
                 newFecha = recogerNormal.toLocaleDateString();
                 break;
             case 4:
                 var recogerNormal = new Date();
                 recogerNormal.setDate(recogerNormal.getDate()+5);
+                if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                    newFecha = recogerNormal
+                    newFecha.setDate(newFecha.getDate()+1)
+                    newFecha = newFecha.toLocaleDateString()
+                    break;
+                }
                 newFecha = recogerNormal.toLocaleDateString();
                 break;
             case 5:
                 var recogerNormal = new Date();
                 recogerNormal.setDate(recogerNormal.getDate()+5);
+                if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                    newFecha = recogerNormal
+                    newFecha.setDate(newFecha.getDate()+1)
+                    newFecha = newFecha.toLocaleDateString()
+                    break;
+                }
                 newFecha = recogerNormal.toLocaleDateString();
                 break;
             case 6:
                 var recogerNormal = new Date();
                 recogerNormal.setDate(recogerNormal.getDate()+4);
+                if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                    newFecha = recogerNormal
+                    newFecha.setDate(newFecha.getDate()+1)
+                    newFecha = newFecha.toLocaleDateString()
+                    break;
+                }
                 newFecha = recogerNormal.toLocaleDateString();
                 break;
             default:
@@ -85,6 +162,12 @@ async function impresora() {
                     var hour = recogerNormal.getHours()
                     if (hour >= 12) {
                         recogerNormal.setDate(recogerNormal.getDate() + 1);
+                        if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                            newFecha = recogerNormal
+                            newFecha.setDate(newFecha.getDate()+1)
+                            newFecha = newFecha.toLocaleDateString()
+                            break;
+                        }
                         newFecha = recogerNormal.toLocaleDateString();
                         console.log(newFecha + " " + hour);
                         break;
@@ -98,6 +181,12 @@ async function impresora() {
                     var hour = recogerNormal.getHours()
                     if (hour >= 12) {
                         recogerNormal.setDate(recogerNormal.getDate() + 1);
+                        if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                            newFecha = recogerNormal
+                            newFecha.setDate(newFecha.getDate()+1)
+                            newFecha = newFecha.toLocaleDateString()
+                            break;
+                        }
                         newFecha = recogerNormal.toLocaleDateString();
                         console.log(newFecha + " " + hour);
                         break;
@@ -111,6 +200,12 @@ async function impresora() {
                     var hour = recogerNormal.getHours()
                     if (hour >= 12) {
                         recogerNormal.setDate(recogerNormal.getDate() + 1);
+                        if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                            newFecha = recogerNormal
+                            newFecha.setDate(newFecha.getDate()+1)
+                            newFecha = newFecha.toLocaleDateString()
+                            break;
+                        }
                         newFecha = recogerNormal.toLocaleDateString();
                         console.log(newFecha + " " + hour);
                         break;
@@ -124,6 +219,12 @@ async function impresora() {
                     var hour = recogerNormal.getHours()
                     if (hour >= 12) {
                         recogerNormal.setDate(recogerNormal.getDate() + 1);
+                        if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                            newFecha = recogerNormal
+                            newFecha.setDate(newFecha.getDate()+3)
+                            newFecha = newFecha.toLocaleDateString()
+                            break;
+                        }
                         newFecha = recogerNormal.toLocaleDateString();
                         console.log(newFecha + " " + hour);
                         break;
@@ -137,6 +238,12 @@ async function impresora() {
                     var hour = recogerNormal.getHours()
                     if (hour >= 12) {
                         recogerNormal.setDate(recogerNormal.getDate() + 3);
+                        if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                            newFecha = recogerNormal
+                            newFecha.setDate(newFecha.getDate()+1)
+                            newFecha = newFecha.toLocaleDateString()
+                            break;
+                        }
                         newFecha = recogerNormal.toLocaleDateString();
                         console.log(newFecha + " " + hour);
                         break;
@@ -148,6 +255,12 @@ async function impresora() {
                 case 6:
                     var recogerNormal = new Date();
                     recogerNormal.setDate(recogerNormal.getDate() + 2);
+                    if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                        newFecha = recogerNormal
+                        newFecha.setDate(newFecha.getDate()+1)
+                        newFecha = newFecha.toLocaleDateString()
+                        break;
+                    }
                     newFecha = recogerNormal.toLocaleDateString();
                     console.log(newFecha);
                     break;
