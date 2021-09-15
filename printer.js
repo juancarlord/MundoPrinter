@@ -16,6 +16,9 @@ async function impresora() {
                 if (document.getElementById("hayFestivo").checked) {
                     recogerNormal.setDate(recogerNormal.getDate()+1);
                 }
+                if (document.getElementById("hayTac").checked) {
+                    recogerNormal.setDate(recogerNormal.getDate()+1);
+                }
                 if (festivos.includes(recogerNormal.toLocaleDateString())) {
                     newFecha = recogerNormal
                     newFecha.setDate(newFecha.getDate()+1)
@@ -28,6 +31,9 @@ async function impresora() {
                 var recogerNormal = new Date();
                 recogerNormal.setDate(recogerNormal.getDate()+1);
                 if (document.getElementById("hayFestivo").checked) {
+                    recogerNormal.setDate(recogerNormal.getDate()+1);
+                }
+                if (document.getElementById("hayTac").checked) {
                     recogerNormal.setDate(recogerNormal.getDate()+1);
                 }
                 if (festivos.includes(recogerNormal.toLocaleDateString())) {
@@ -44,6 +50,9 @@ async function impresora() {
                 if (document.getElementById("hayFestivo").checked) {
                     recogerNormal.setDate(recogerNormal.getDate()+1);
                 }
+                if (document.getElementById("hayTac").checked) {
+                    recogerNormal.setDate(recogerNormal.getDate()+1);
+                }
                 if (festivos.includes(recogerNormal.toLocaleDateString())) {
                     newFecha = recogerNormal
                     newFecha.setDate(newFecha.getDate()+1)
@@ -55,6 +64,9 @@ async function impresora() {
             case 4:
                 var recogerNormal = new Date();
                 recogerNormal.setDate(recogerNormal.getDate()+1);
+                if (document.getElementById("hayTac").checked) {
+                    recogerNormal.setDate(recogerNormal.getDate()+3);
+                }
                 if (document.getElementById("hayFestivo").checked) {
                     recogerNormal.setDate(recogerNormal.getDate()+3);
                 }
@@ -69,6 +81,9 @@ async function impresora() {
             case 5:
                 var recogerNormal = new Date();
                 recogerNormal.setDate(recogerNormal.getDate()+3);
+                if (document.getElementById("hayTac").checked) {
+                    recogerNormal.setDate(recogerNormal.getDate()+1);
+                }
                 if (document.getElementById("hayFestivo").checked) {
                     recogerNormal.setDate(recogerNormal.getDate()+1);
                 }
@@ -83,6 +98,9 @@ async function impresora() {
             case 6:
                 var recogerNormal = new Date();
                 recogerNormal.setDate(recogerNormal.getDate()+2);
+                if (document.getElementById("hayTac").checked) {
+                    recogerNormal.setDate(recogerNormal.getDate()+1);
+                }
                 if (document.getElementById("hayFestivo").checked) {
                     recogerNormal.setDate(recogerNormal.getDate()+1);
                 }
