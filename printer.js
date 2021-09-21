@@ -219,6 +219,9 @@ async function impresora() {
                         if (document.getElementById("hayFestivo").checked) {
                             recogerNormal.setDate(recogerNormal.getDate()+1);
                         }
+                        if (document.getElementById("hayTac").checked) {
+                            recogerNormal.setDate(recogerNormal.getDate()+1);
+                        }
                         if (festivos.includes(recogerNormal.toLocaleDateString())) {
                             newFecha = recogerNormal
                             newFecha.setDate(newFecha.getDate()+1)
@@ -228,6 +231,9 @@ async function impresora() {
                         newFecha = recogerNormal.toLocaleDateString();
                         console.log(newFecha + " " + hour);
                         break;
+                    }
+                    if (document.getElementById("hayTac").checked) {
+                        recogerNormal.setDate(recogerNormal.getDate()+1);
                     }
                     recogerNormal.setDate(recogerNormal.getDate());
                     newFecha = recogerNormal.toLocaleDateString() + " de 2:00pm a 5:30pm";
@@ -241,6 +247,9 @@ async function impresora() {
                         if (document.getElementById("hayFestivo").checked) {
                             recogerNormal.setDate(recogerNormal.getDate()+1);
                         }
+                        if (document.getElementById("hayTac").checked) {
+                            recogerNormal.setDate(recogerNormal.getDate()+1);
+                        }
                         if (festivos.includes(recogerNormal.toLocaleDateString())) {
                             newFecha = recogerNormal
                             newFecha.setDate(newFecha.getDate()+1)
@@ -250,6 +259,9 @@ async function impresora() {
                         newFecha = recogerNormal.toLocaleDateString();
                         console.log(newFecha + " " + hour);
                         break;
+                    }
+                    if (document.getElementById("hayTac").checked) {
+                        recogerNormal.setDate(recogerNormal.getDate()+1);
                     }
                     recogerNormal.setDate(recogerNormal.getDate());
                     newFecha = recogerNormal.toLocaleDateString() + " de 2:00pm a 5:30pm";
@@ -263,6 +275,9 @@ async function impresora() {
                         if (document.getElementById("hayFestivo").checked) {
                             recogerNormal.setDate(recogerNormal.getDate()+1);
                         }
+                        if (document.getElementById("hayTac").checked) {
+                            recogerNormal.setDate(recogerNormal.getDate()+1);
+                        }
                         if (festivos.includes(recogerNormal.toLocaleDateString())) {
                             newFecha = recogerNormal
                             newFecha.setDate(newFecha.getDate()+1)
@@ -272,6 +287,9 @@ async function impresora() {
                         newFecha = recogerNormal.toLocaleDateString();
                         console.log(newFecha + " " + hour);
                         break;
+                    }
+                    if (document.getElementById("hayTac").checked) {
+                        recogerNormal.setDate(recogerNormal.getDate()+1);
                     }
                     recogerNormal.setDate(recogerNormal.getDate());
                     newFecha = recogerNormal.toLocaleDateString() + " de 2:00pm a 5:30pm";
@@ -285,6 +303,9 @@ async function impresora() {
                         if (document.getElementById("hayFestivo").checked) {
                             recogerNormal.setDate(recogerNormal.getDate()+3);
                         }
+                        if (document.getElementById("hayTac").checked) {
+                            recogerNormal.setDate(recogerNormal.getDate()+3);
+                        }
                         if (festivos.includes(recogerNormal.toLocaleDateString())) {
                             newFecha = recogerNormal
                             newFecha.setDate(newFecha.getDate()+3)
@@ -294,6 +315,9 @@ async function impresora() {
                         newFecha = recogerNormal.toLocaleDateString();
                         console.log(newFecha + " " + hour);
                         break;
+                    }
+                    if (document.getElementById("hayTac").checked) {
+                        recogerNormal.setDate(recogerNormal.getDate()+1);
                     }
                     recogerNormal.setDate(recogerNormal.getDate());
                     newFecha = recogerNormal.toLocaleDateString() + " de 2:00pm a 5:30pm";
@@ -307,6 +331,9 @@ async function impresora() {
                         if (document.getElementById("hayFestivo").checked) {
                             recogerNormal.setDate(recogerNormal.getDate()+1);
                         }
+                        if (document.getElementById("hayTac").checked) {
+                            recogerNormal.setDate(recogerNormal.getDate()+1);
+                        }
                         if (festivos.includes(recogerNormal.toLocaleDateString())) {
                             newFecha = recogerNormal
                             newFecha.setDate(newFecha.getDate()+1)
@@ -317,6 +344,9 @@ async function impresora() {
                         console.log(newFecha + " " + hour);
                         break;
                     }
+                    if (document.getElementById("hayTac").checked) {
+                        recogerNormal.setDate(recogerNormal.getDate()+3);
+                    }
                     recogerNormal.setDate(recogerNormal.getDate());
                     newFecha = recogerNormal.toLocaleDateString() + " de 2:00pm a 5:30pm";
                     console.log(newFecha);
@@ -325,6 +355,9 @@ async function impresora() {
                     var recogerNormal = new Date();
                     recogerNormal.setDate(recogerNormal.getDate() + 2);
                     if (document.getElementById("hayFestivo").checked) {
+                        recogerNormal.setDate(recogerNormal.getDate()+1);
+                    }
+                    if (document.getElementById("hayTac").checked) {
                         recogerNormal.setDate(recogerNormal.getDate()+1);
                     }
                     if (festivos.includes(recogerNormal.toLocaleDateString())) {
