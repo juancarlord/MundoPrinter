@@ -6,17 +6,29 @@ async function impresora() {
     "6/20/2022", "6/27/2022", "7/4/2022", "7/20/2022", "8/15/2022", "10/17/2022", "11/7/2022", "11/14/2022",
     "12/8/2022"
     ]
+    var tacReg = new RegExp('^'+ "TAC");
+    console.log(document.getElementById("estudios-dropdown").value);
     var entidad = document.getElementById('entidad').value;
     var fecha = new Date();
     if (entidad == "PREPAGADA") {
         switch(fecha.getDay()){
             case 1:
                 var recogerNormal = new Date();
-                recogerNormal.setDate(recogerNormal.getDate()+1);
-                if (document.getElementById("hayFestivo").checked) {
-                    recogerNormal.setDate(recogerNormal.getDate()+1);
+                var festivo = new Date();
+                cuenta = 1;
+                for (let index = 0; index < 1; index++) {
+                    festivo.setDate(festivo.getDate() + 1);
+                    console.log(festivo.toLocaleDateString());
+                    if (festivos.includes(festivo.toLocaleDateString())) {
+                        cuenta++;
+                        console.log("hubo festivo");
+                    } else {
+                        console.log("no se encontro festivo");
+                    }
                 }
-                if (document.getElementById("hayTac").checked) {
+                recogerNormal.setDate(recogerNormal.getDate()+cuenta);
+
+                if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                     recogerNormal.setDate(recogerNormal.getDate()+1);
                 }
                 if (festivos.includes(recogerNormal.toLocaleDateString())) {
@@ -29,11 +41,21 @@ async function impresora() {
                 break;
             case 2:
                 var recogerNormal = new Date();
-                recogerNormal.setDate(recogerNormal.getDate()+1);
-                if (document.getElementById("hayFestivo").checked) {
-                    recogerNormal.setDate(recogerNormal.getDate()+1);
+                var festivo = new Date();
+                cuenta = 1;
+                for (let index = 0; index < 1; index++) {
+                    festivo.setDate(festivo.getDate() + 1);
+                    console.log(festivo.toLocaleDateString());
+                    if (festivos.includes(festivo.toLocaleDateString())) {
+                        cuenta++;
+                        console.log("hubo festivo");
+                    } else {
+                        console.log("no se encontro festivo");
+                    }
                 }
-                if (document.getElementById("hayTac").checked) {
+                recogerNormal.setDate(recogerNormal.getDate()+cuenta);
+                
+                if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                     recogerNormal.setDate(recogerNormal.getDate()+1);
                 }
                 if (festivos.includes(recogerNormal.toLocaleDateString())) {
@@ -46,12 +68,30 @@ async function impresora() {
                 break;
             case 3:
                 var recogerNormal = new Date();
-                recogerNormal.setDate(recogerNormal.getDate()+1);
+                var festivo = new Date();
+                cuenta = 1;
+                for (let index = 0; index < 1; index++) {
+                    festivo.setDate(festivo.getDate() + 1);
+                    console.log(festivo.toLocaleDateString());
+                    if (festivos.includes(festivo.toLocaleDateString())) {
+                        cuenta++;
+                        console.log("hubo festivo");
+                    } else {
+                        console.log("no se encontro festivo");
+                    }
+                }
+                recogerNormal.setDate(recogerNormal.getDate()+cuenta);
                 if (document.getElementById("hayFestivo").checked) {
                     recogerNormal.setDate(recogerNormal.getDate()+1);
                 }
-                if (document.getElementById("hayTac").checked) {
+                if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                     recogerNormal.setDate(recogerNormal.getDate()+1);
+                    if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                        newFecha = recogerNormal
+                        newFecha.setDate(newFecha.getDate()+3)
+                        newFecha = newFecha.toLocaleDateString()
+                        break;
+                    }
                 }
                 if (festivos.includes(recogerNormal.toLocaleDateString())) {
                     newFecha = recogerNormal
@@ -63,16 +103,35 @@ async function impresora() {
                 break;
             case 4:
                 var recogerNormal = new Date();
-                recogerNormal.setDate(recogerNormal.getDate()+1);
-                if (document.getElementById("hayTac").checked) {
-                    recogerNormal.setDate(recogerNormal.getDate()+3);
+                var festivo = new Date();
+                cuenta = 1;
+                for (let index = 0; index < 1; index++) {
+                    festivo.setDate(festivo.getDate() + 1);
+                    console.log(festivo.toLocaleDateString());
+                    if (festivos.includes(festivo.toLocaleDateString())) {
+                        cuenta++;
+                        console.log("hubo festivo");
+                    } else {
+                        console.log("no se encontro festivo");
+                    }
                 }
-                if (document.getElementById("hayFestivo").checked) {
+                recogerNormal.setDate(recogerNormal.getDate()+cuenta);
+
+                if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                     recogerNormal.setDate(recogerNormal.getDate()+3);
+                    if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                        newFecha = recogerNormal
+                        newFecha.setDate(newFecha.getDate()+1)
+                        newFecha = newFecha.toLocaleDateString()
+                        break;
+                    }
+                    newFecha = recogerNormal.toLocaleDateString();
+                    break;
                 }
+                
                 if (festivos.includes(recogerNormal.toLocaleDateString())) {
                     newFecha = recogerNormal
-                    newFecha.setDate(newFecha.getDate()+1)
+                    newFecha.setDate(newFecha.getDate()+3)
                     newFecha = newFecha.toLocaleDateString()
                     break;
                 }
@@ -80,13 +139,26 @@ async function impresora() {
                 break;
             case 5:
                 var recogerNormal = new Date();
-                recogerNormal.setDate(recogerNormal.getDate()+3);
-                if (document.getElementById("hayTac").checked) {
-                    recogerNormal.setDate(recogerNormal.getDate()+1);
+                var festivo = new Date();
+                cuenta = 3;
+                for (let index = 0; index < 3; index++) {
+                    festivo.setDate(festivo.getDate() + 1);
+                    console.log(festivo.toLocaleDateString());
+                    if (festivos.includes(festivo.toLocaleDateString())) {
+                        cuenta++;
+                        console.log("hubo festivo");
+                    } else {
+                        console.log("no se encontro festivo");
+                    }
                 }
+                recogerNormal.setDate(recogerNormal.getDate()+cuenta);
                 if (document.getElementById("hayFestivo").checked) {
                     recogerNormal.setDate(recogerNormal.getDate()+1);
                 }
+                if(tacReg.test(document.getElementById("estudios-dropdown").value)){
+                    recogerNormal.setDate(recogerNormal.getDate()+1);
+                }
+                
                 if (festivos.includes(recogerNormal.toLocaleDateString())) {
                     newFecha = recogerNormal
                     newFecha.setDate(newFecha.getDate()+1)
@@ -97,11 +169,21 @@ async function impresora() {
                 break;
             case 6:
                 var recogerNormal = new Date();
-                recogerNormal.setDate(recogerNormal.getDate()+2);
-                if (document.getElementById("hayTac").checked) {
-                    recogerNormal.setDate(recogerNormal.getDate()+1);
+                var festivo = new Date();
+                cuenta = 2;
+                for (let index = 0; index < 2; index++) {
+                    festivo.setDate(festivo.getDate() + 1);
+                    console.log(festivo.toLocaleDateString());
+                    if (festivos.includes(festivo.toLocaleDateString())) {
+                        cuenta++;
+                        console.log("hubo festivo");
+                    } else {
+                        console.log("no se encontro festivo");
+                    }
                 }
-                if (document.getElementById("hayFestivo").checked) {
+                recogerNormal.setDate(recogerNormal.getDate()+cuenta);
+                
+                if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                     recogerNormal.setDate(recogerNormal.getDate()+1);
                 }
                 if (festivos.includes(recogerNormal.toLocaleDateString())) {
@@ -122,9 +204,30 @@ async function impresora() {
         switch(fecha.getDay()){
             case 1:
                 var recogerNormal = new Date();
-                recogerNormal.setDate(recogerNormal.getDate()+3);
-                if (document.getElementById("hayFestivo").checked) {
+                var festivo = new Date();
+                cuenta = 3;
+                for (let index = 0; index < 3; index++) {
+                    festivo.setDate(festivo.getDate() + 1);
+                    console.log(festivo.toLocaleDateString());
+                    if (festivos.includes(festivo.toLocaleDateString())) {
+                        cuenta++;
+                        console.log("hubo festivo");
+                    } else {
+                        console.log("no se encontro festivo");
+                    }
+                }
+                recogerNormal.setDate(recogerNormal.getDate()+cuenta);
+
+                if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                     recogerNormal.setDate(recogerNormal.getDate()+1);
+                    if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                        newFecha = recogerNormal
+                        newFecha.setDate(newFecha.getDate()+3)
+                        newFecha = newFecha.toLocaleDateString()
+                        break;
+                    }
+                    newFecha = recogerNormal.toLocaleDateString();
+                    break;
                 }
                 if (festivos.includes(recogerNormal.toLocaleDateString())) {
                     newFecha = recogerNormal
@@ -136,10 +239,32 @@ async function impresora() {
                 break;
             case 2:
                 var recogerNormal = new Date();
-                recogerNormal.setDate(recogerNormal.getDate()+3);
-                if (document.getElementById("hayFestivo").checked) {
-                    recogerNormal.setDate(recogerNormal.getDate()+3);
+                var festivo = new Date();
+                cuenta = 3;
+                for (let index = 0; index < 3; index++) {
+                    festivo.setDate(festivo.getDate() + 1);
+                    console.log(festivo.toLocaleDateString());
+                    if (festivos.includes(festivo.toLocaleDateString())) {
+                        cuenta++;
+                        console.log("hubo festivo");
+                    } else {
+                        console.log("no se encontro festivo");
+                    }
                 }
+                recogerNormal.setDate(recogerNormal.getDate()+cuenta);
+
+                if(tacReg.test(document.getElementById("estudios-dropdown").value)){
+                    recogerNormal.setDate(recogerNormal.getDate()+3);
+                    if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                        newFecha = recogerNormal
+                        newFecha.setDate(newFecha.getDate()+1)
+                        newFecha = newFecha.toLocaleDateString()
+                        break;
+                    }
+                    newFecha = recogerNormal.toLocaleDateString();
+                    break;
+                }
+
                 if (festivos.includes(recogerNormal.toLocaleDateString())) {
                     newFecha = recogerNormal
                     newFecha.setDate(newFecha.getDate()+3)
@@ -150,10 +275,24 @@ async function impresora() {
                 break;
             case 3:
                 var recogerNormal = new Date();
-                recogerNormal.setDate(recogerNormal.getDate()+5);
-                if (document.getElementById("hayFestivo").checked) {
+                var festivo = new Date();
+                cuenta = 5;
+                for (let index = 0; index < 5; index++) {
+                    festivo.setDate(festivo.getDate() + 1);
+                    console.log(festivo.toLocaleDateString());
+                    if (festivos.includes(festivo.toLocaleDateString())) {
+                        cuenta++;
+                        console.log("hubo festivo");
+                    } else {
+                        console.log("no se encontro festivo");
+                    }
+                }
+                recogerNormal.setDate(recogerNormal.getDate()+cuenta);
+
+                if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                     recogerNormal.setDate(recogerNormal.getDate()+1);
                 }
+
                 if (festivos.includes(recogerNormal.toLocaleDateString())) {
                     newFecha = recogerNormal
                     newFecha.setDate(newFecha.getDate()+1)
@@ -164,9 +303,23 @@ async function impresora() {
                 break;
             case 4:
                 var recogerNormal = new Date();
-                recogerNormal.setDate(recogerNormal.getDate()+5);
-                if (document.getElementById("hayFestivo").checked) {
+                var festivo = new Date();
+                cuenta = 5;
+                for (let index = 0; index < 5; index++) {
+                    festivo.setDate(festivo.getDate() + 1);
+                    console.log(festivo.toLocaleDateString());
+                    if (festivos.includes(festivo.toLocaleDateString())) {
+                        cuenta++;
+                        console.log("hubo festivo");
+                    } else {
+                        console.log("no se encontro festivo");
+                    }
+                }
+                recogerNormal.setDate(recogerNormal.getDate()+cuenta);
+
+                if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                     recogerNormal.setDate(recogerNormal.getDate()+1);
+                    
                 }
                 if (festivos.includes(recogerNormal.toLocaleDateString())) {
                     newFecha = recogerNormal
@@ -178,8 +331,21 @@ async function impresora() {
                 break;
             case 5:
                 var recogerNormal = new Date();
-                recogerNormal.setDate(recogerNormal.getDate()+5);
-                if (document.getElementById("hayFestivo").checked) {
+                var festivo = new Date();
+                cuenta = 5;
+                for (let index = 0; index < 5; index++) {
+                    festivo.setDate(festivo.getDate() + 1);
+                    console.log(festivo.toLocaleDateString());
+                    if (festivos.includes(festivo.toLocaleDateString())) {
+                        cuenta++;
+                        console.log("hubo festivo");
+                    } else {
+                        console.log("no se encontro festivo");
+                    }
+                }
+                recogerNormal.setDate(recogerNormal.getDate()+cuenta);
+
+                if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                     recogerNormal.setDate(recogerNormal.getDate()+1);
                 }
                 if (festivos.includes(recogerNormal.toLocaleDateString())) {
@@ -192,10 +358,24 @@ async function impresora() {
                 break;
             case 6:
                 var recogerNormal = new Date();
-                recogerNormal.setDate(recogerNormal.getDate()+4);
-                if (document.getElementById("hayFestivo").checked) {
+                var festivo = new Date();
+                cuenta = 4;
+                for (let index = 0; index < 4; index++) {
+                    festivo.setDate(festivo.getDate() + 1);
+                    console.log(festivo.toLocaleDateString());
+                    if (festivos.includes(festivo.toLocaleDateString())) {
+                        cuenta++;
+                        console.log("hubo festivo");
+                    } else {
+                        console.log("no se encontro festivo");
+                    }
+                }
+                recogerNormal.setDate(recogerNormal.getDate()+cuenta);
+                
+                if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                     recogerNormal.setDate(recogerNormal.getDate()+1);
                 }
+
                 if (festivos.includes(recogerNormal.toLocaleDateString())) {
                     newFecha = recogerNormal
                     newFecha.setDate(newFecha.getDate()+1)
@@ -214,14 +394,25 @@ async function impresora() {
                 case 1:
                     var recogerNormal = new Date();
                     var hour = recogerNormal.getHours()
+                    var festivo = new Date();
+                    cuenta = 1;
+                    for (let index = 0; index < 1; index++) {
+                        festivo.setDate(festivo.getDate() + 1);
+                        console.log(festivo.toLocaleDateString());
+                        if (festivos.includes(festivo.toLocaleDateString())) {
+                            cuenta++;
+                            console.log("hubo festivo");
+                        } else {
+                            console.log("no se encontro festivo");
+                        }
+                    }
                     if (hour >= 12) {
-                        recogerNormal.setDate(recogerNormal.getDate() + 1);
-                        if (document.getElementById("hayFestivo").checked) {
+                        recogerNormal.setDate(recogerNormal.getDate() + cuenta);
+
+                        if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                             recogerNormal.setDate(recogerNormal.getDate()+1);
                         }
-                        if (document.getElementById("hayTac").checked) {
-                            recogerNormal.setDate(recogerNormal.getDate()+1);
-                        }
+                        
                         if (festivos.includes(recogerNormal.toLocaleDateString())) {
                             newFecha = recogerNormal
                             newFecha.setDate(newFecha.getDate()+1)
@@ -232,9 +423,18 @@ async function impresora() {
                         console.log(newFecha + " " + hour);
                         break;
                     }
-                    if (document.getElementById("hayTac").checked) {
-                        recogerNormal.setDate(recogerNormal.getDate()+1);
+                    if(tacReg.test(document.getElementById("estudios-dropdown").value)){
+                        recogerNormal.setDate(recogerNormal.getDate()+cuenta+1);
+                        if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                            newFecha = recogerNormal
+                            newFecha.setDate(newFecha.getDate()+1)
+                            newFecha = newFecha.toLocaleDateString()
+                            break;
+                        }
+                        newFecha = recogerNormal.toLocaleDateString();
+                        break;
                     }
+                    
                     recogerNormal.setDate(recogerNormal.getDate());
                     newFecha = recogerNormal.toLocaleDateString() + " de 2:00pm a 5:30pm";
                     console.log(newFecha);
@@ -242,12 +442,22 @@ async function impresora() {
                 case 2:
                     var recogerNormal = new Date();
                     var hour = recogerNormal.getHours()
-                    if (hour >= 12) {
-                        recogerNormal.setDate(recogerNormal.getDate() + 1);
-                        if (document.getElementById("hayFestivo").checked) {
-                            recogerNormal.setDate(recogerNormal.getDate()+1);
+                    var festivo = new Date();
+                    cuenta = 1;
+                    for (let index = 0; index < 1; index++) {
+                        festivo.setDate(festivo.getDate() + 1);
+                        console.log(festivo.toLocaleDateString());
+                        if (festivos.includes(festivo.toLocaleDateString())) {
+                            cuenta++;
+                            console.log("hubo festivo");
+                        } else {
+                            console.log("no se encontro festivo");
                         }
-                        if (document.getElementById("hayTac").checked) {
+                    }
+                    if (hour >= 12) {
+                        recogerNormal.setDate(recogerNormal.getDate() + cuenta);
+
+                        if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                             recogerNormal.setDate(recogerNormal.getDate()+1);
                         }
                         if (festivos.includes(recogerNormal.toLocaleDateString())) {
@@ -260,8 +470,16 @@ async function impresora() {
                         console.log(newFecha + " " + hour);
                         break;
                     }
-                    if (document.getElementById("hayTac").checked) {
-                        recogerNormal.setDate(recogerNormal.getDate()+1);
+                    if(tacReg.test(document.getElementById("estudios-dropdown").value)){
+                        recogerNormal.setDate(recogerNormal.getDate()+cuenta+1);
+                        if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                            newFecha = recogerNormal
+                            newFecha.setDate(newFecha.getDate()+1)
+                            newFecha = newFecha.toLocaleDateString()
+                            break;
+                        }
+                        newFecha = recogerNormal.toLocaleDateString();
+                        break;
                     }
                     recogerNormal.setDate(recogerNormal.getDate());
                     newFecha = recogerNormal.toLocaleDateString() + " de 2:00pm a 5:30pm";
@@ -270,26 +488,45 @@ async function impresora() {
                 case 3:
                     var recogerNormal = new Date();
                     var hour = recogerNormal.getHours()
+                    var festivo = new Date();
+                    cuenta = 1;
+                    for (let index = 0; index < 1; index++) {
+                        festivo.setDate(festivo.getDate() + 1);
+                        console.log(festivo.toLocaleDateString());
+                        if (festivos.includes(festivo.toLocaleDateString())) {
+                            cuenta++;
+                            console.log("hubo festivo");
+                        } else {
+                            console.log("no se encontro festivo");
+                        }
+                    }
                     if (hour >= 12) {
-                        recogerNormal.setDate(recogerNormal.getDate() + 1);
-                        if (document.getElementById("hayFestivo").checked) {
+                        recogerNormal.setDate(recogerNormal.getDate() + cuenta);
+
+                        if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                             recogerNormal.setDate(recogerNormal.getDate()+1);
-                        }
-                        if (document.getElementById("hayTac").checked) {
-                            recogerNormal.setDate(recogerNormal.getDate()+1);
-                        }
-                        if (festivos.includes(recogerNormal.toLocaleDateString())) {
-                            newFecha = recogerNormal
-                            newFecha.setDate(newFecha.getDate()+1)
-                            newFecha = newFecha.toLocaleDateString()
-                            break;
+                            if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                                newFecha = recogerNormal
+                                newFecha.setDate(newFecha.getDate()+3)
+                                newFecha = newFecha.toLocaleDateString()
+                                break;
+                            }
                         }
                         newFecha = recogerNormal.toLocaleDateString();
                         console.log(newFecha + " " + hour);
                         break;
                     }
-                    if (document.getElementById("hayTac").checked) {
-                        recogerNormal.setDate(recogerNormal.getDate()+1);
+                    if(tacReg.test(document.getElementById("estudios-dropdown").value)){
+                        recogerNormal.setDate(recogerNormal.getDate()+cuenta+1);
+                        if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                            newFecha = recogerNormal
+                            newFecha.setDate(newFecha.getDate()+3)
+                            newFecha = newFecha.toLocaleDateString()
+                            break;
+                        }
+                            newFecha = recogerNormal
+                            newFecha = newFecha.toLocaleDateString()
+                            break;
                     }
                     recogerNormal.setDate(recogerNormal.getDate());
                     newFecha = recogerNormal.toLocaleDateString() + " de 2:00pm a 5:30pm";
@@ -298,26 +535,45 @@ async function impresora() {
                 case 4:
                     var recogerNormal = new Date();
                     var hour = recogerNormal.getHours()
+                    var festivo = new Date();
+                    cuenta = 1;
+                    for (let index = 0; index < 1; index++) {
+                        festivo.setDate(festivo.getDate() + 1);
+                        console.log(festivo.toLocaleDateString());
+                        if (festivos.includes(festivo.toLocaleDateString())) {
+                            cuenta++;
+                            console.log("hubo festivo");
+                        } else {
+                            console.log("no se encontro festivo");
+                        }
+                    }
                     if (hour >= 12) {
-                        recogerNormal.setDate(recogerNormal.getDate() + 1);
-                        if (document.getElementById("hayFestivo").checked) {
+                        recogerNormal.setDate(recogerNormal.getDate() + cuenta);
+
+                        if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                             recogerNormal.setDate(recogerNormal.getDate()+3);
-                        }
-                        if (document.getElementById("hayTac").checked) {
-                            recogerNormal.setDate(recogerNormal.getDate()+3);
-                        }
-                        if (festivos.includes(recogerNormal.toLocaleDateString())) {
-                            newFecha = recogerNormal
-                            newFecha.setDate(newFecha.getDate()+3)
-                            newFecha = newFecha.toLocaleDateString()
-                            break;
+                            if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                                newFecha = recogerNormal
+                                newFecha.setDate(newFecha.getDate()+1)
+                                newFecha = newFecha.toLocaleDateString()
+                                break;
+                            }
                         }
                         newFecha = recogerNormal.toLocaleDateString();
                         console.log(newFecha + " " + hour);
                         break;
                     }
-                    if (document.getElementById("hayTac").checked) {
-                        recogerNormal.setDate(recogerNormal.getDate()+1);
+                    if(tacReg.test(document.getElementById("estudios-dropdown").value)){
+                        recogerNormal.setDate(recogerNormal.getDate()+cuenta+3);
+                        if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                            newFecha = recogerNormal
+                            newFecha.setDate(newFecha.getDate()+1)
+                            newFecha = newFecha.toLocaleDateString()
+                            break;
+                        }
+                        newFecha = recogerNormal
+                        newFecha = newFecha.toLocaleDateString()
+                        break;
                     }
                     recogerNormal.setDate(recogerNormal.getDate());
                     newFecha = recogerNormal.toLocaleDateString() + " de 2:00pm a 5:30pm";
@@ -325,46 +581,59 @@ async function impresora() {
                     break;
                 case 5:
                     var recogerNormal = new Date();
-                    var hour = recogerNormal.getHours()
+                    var festivo = new Date();
+                    var hour = recogerNormal.getHours();
+                    cuenta = 3;
+                    for (let index = 0; index < 3; index++) {
+                        festivo.setDate(festivo.getDate() + 1);
+                        console.log(festivo.toLocaleDateString());
+                        if (festivos.includes(festivo.toLocaleDateString())) {
+                            cuenta++;
+                            console.log("hubo festivo");
+                        } else {
+                            console.log("no se encontro festivo");
+                        }
+                    }
                     if (hour >= 12) {
-                        recogerNormal.setDate(recogerNormal.getDate() + 3);
-                        if (document.getElementById("hayFestivo").checked) {
+                        recogerNormal.setDate(recogerNormal.getDate() + cuenta);
+                        
+                        if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                             recogerNormal.setDate(recogerNormal.getDate()+1);
-                        }
-                        if (document.getElementById("hayTac").checked) {
-                            recogerNormal.setDate(recogerNormal.getDate()+1);
-                        }
-                        if (festivos.includes(recogerNormal.toLocaleDateString())) {
-                            newFecha = recogerNormal
-                            newFecha.setDate(newFecha.getDate()+1)
-                            newFecha = newFecha.toLocaleDateString()
-                            break;
+                            console.log("coincide");
                         }
                         newFecha = recogerNormal.toLocaleDateString();
                         console.log(newFecha + " " + hour);
                         break;
                     }
-                    if (document.getElementById("hayTac").checked) {
-                        recogerNormal.setDate(recogerNormal.getDate()+3);
+                    if(tacReg.test(document.getElementById("estudios-dropdown").value)){
+                        recogerNormal.setDate(recogerNormal.getDate()+cuenta+1);
+                        newFecha = recogerNormal.toLocaleDateString();
+                        break;
                     }
+                    
                     recogerNormal.setDate(recogerNormal.getDate());
                     newFecha = recogerNormal.toLocaleDateString() + " de 2:00pm a 5:30pm";
                     console.log(newFecha);
                     break;
                 case 6:
                     var recogerNormal = new Date();
-                    recogerNormal.setDate(recogerNormal.getDate() + 2);
-                    if (document.getElementById("hayFestivo").checked) {
-                        recogerNormal.setDate(recogerNormal.getDate()+1);
+                    var festivo = new Date();
+                    var hour = recogerNormal.getHours();
+                    cuenta = 3;
+                    for (let index = 0; index < 3; index++) {
+                        festivo.setDate(festivo.getDate() + 1);
+                        console.log(festivo.toLocaleDateString());
+                        if (festivos.includes(festivo.toLocaleDateString())) {
+                            cuenta++;
+                            console.log("hubo festivo");
+                        } else {
+                            console.log("no se encontro festivo");
+                        }
                     }
-                    if (document.getElementById("hayTac").checked) {
+                    recogerNormal.setDate(recogerNormal.getDate() + cuenta);
+                    
+                    if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                         recogerNormal.setDate(recogerNormal.getDate()+1);
-                    }
-                    if (festivos.includes(recogerNormal.toLocaleDateString())) {
-                        newFecha = recogerNormal
-                        newFecha.setDate(newFecha.getDate()+1)
-                        newFecha = newFecha.toLocaleDateString()
-                        break;
                     }
                     newFecha = recogerNormal.toLocaleDateString();
                     console.log(newFecha);

@@ -75,12 +75,12 @@ function handleSquirrelEvent(application) {
 function createWindow() {
     const win = new BrowserWindow({
         width: 500,
-        height: 760,
+        height: 770,
         icon:'assets/hires.ico',
-        resizable: false,
+        resizable: true,
         webPreferences: {
             nodeIntegration: true,
-            devTools: false
+            devTools: true
         }
     })
     win.setMenuBarVisibility(false)
