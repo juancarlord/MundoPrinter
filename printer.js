@@ -18,8 +18,8 @@ async function impresora() {
                 cuenta = 1;
                 for (let index = 0; index < 1; index++) {
                     festivo.setDate(festivo.getDate() + 1);
-                    console.log(festivo.toLocaleDateString());
-                    if (festivos.includes(festivo.toLocaleDateString())) {
+                    console.log(festivo.toLocaleDateString('en-US'));
+                    if (festivos.includes(festivo.toLocaleDateString('en-US'))) {
                         cuenta++;
                         console.log("hubo festivo");
                     } else {
@@ -31,13 +31,13 @@ async function impresora() {
                 if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                     recogerNormal.setDate(recogerNormal.getDate()+1);
                 }
-                if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
                     newFecha = recogerNormal
                     newFecha.setDate(newFecha.getDate()+1)
-                    newFecha = newFecha.toLocaleDateString()
+                    newFecha = newFecha.toLocaleDateString('en-US')
                     break;
                 }
-                newFecha = recogerNormal.toLocaleDateString();
+                newFecha = recogerNormal.toLocaleDateString('en-US');
                 break;
             case 2:
                 var recogerNormal = new Date();
@@ -45,8 +45,8 @@ async function impresora() {
                 cuenta = 1;
                 for (let index = 0; index < 1; index++) {
                     festivo.setDate(festivo.getDate() + 1);
-                    console.log(festivo.toLocaleDateString());
-                    if (festivos.includes(festivo.toLocaleDateString())) {
+                    console.log(festivo.toLocaleDateString('en-US'));
+                    if (festivos.includes(festivo.toLocaleDateString('en-US'))) {
                         cuenta++;
                         console.log("hubo festivo");
                     } else {
@@ -58,13 +58,13 @@ async function impresora() {
                 if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                     recogerNormal.setDate(recogerNormal.getDate()+1);
                 }
-                if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
                     newFecha = recogerNormal
                     newFecha.setDate(newFecha.getDate()+1)
-                    newFecha = newFecha.toLocaleDateString()
+                    newFecha = newFecha.toLocaleDateString('en-US')
                     break;
                 }
-                newFecha = recogerNormal.toLocaleDateString();
+                newFecha = recogerNormal.toLocaleDateString('en-US');
                 break;
             case 3:
                 var recogerNormal = new Date();
@@ -72,8 +72,8 @@ async function impresora() {
                 cuenta = 1;
                 for (let index = 0; index < 1; index++) {
                     festivo.setDate(festivo.getDate() + 1);
-                    console.log(festivo.toLocaleDateString());
-                    if (festivos.includes(festivo.toLocaleDateString())) {
+                    console.log(festivo.toLocaleDateString('en-US'));
+                    if (festivos.includes(festivo.toLocaleDateString('en-US'))) {
                         cuenta++;
                         console.log("hubo festivo");
                     } else {
@@ -86,20 +86,20 @@ async function impresora() {
                 }
                 if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                     recogerNormal.setDate(recogerNormal.getDate()+1);
-                    if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                    if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
                         newFecha = recogerNormal
                         newFecha.setDate(newFecha.getDate()+3)
-                        newFecha = newFecha.toLocaleDateString()
+                        newFecha = newFecha.toLocaleDateString('en-US')
                         break;
                     }
                 }
-                if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
                     newFecha = recogerNormal
                     newFecha.setDate(newFecha.getDate()+1)
-                    newFecha = newFecha.toLocaleDateString()
+                    newFecha = newFecha.toLocaleDateString('en-US')
                     break;
                 }
-                newFecha = recogerNormal.toLocaleDateString();
+                newFecha = recogerNormal.toLocaleDateString('en-US');
                 break;
             case 4:
                 var recogerNormal = new Date();
@@ -107,8 +107,8 @@ async function impresora() {
                 cuenta = 1;
                 for (let index = 0; index < 1; index++) {
                     festivo.setDate(festivo.getDate() + 1);
-                    console.log(festivo.toLocaleDateString());
-                    if (festivos.includes(festivo.toLocaleDateString())) {
+                    console.log(festivo.toLocaleDateString('en-US'));
+                    if (festivos.includes(festivo.toLocaleDateString('en-US'))) {
                         cuenta++;
                         console.log("hubo festivo");
                     } else {
@@ -119,23 +119,23 @@ async function impresora() {
 
                 if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                     recogerNormal.setDate(recogerNormal.getDate()+3);
-                    if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                    if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
                         newFecha = recogerNormal
                         newFecha.setDate(newFecha.getDate()+1)
-                        newFecha = newFecha.toLocaleDateString()
+                        newFecha = newFecha.toLocaleDateString('en-US')
                         break;
                     }
-                    newFecha = recogerNormal.toLocaleDateString();
+                    newFecha = recogerNormal.toLocaleDateString('en-US');
                     break;
                 }
                 
-                if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
                     newFecha = recogerNormal
                     newFecha.setDate(newFecha.getDate()+3)
-                    newFecha = newFecha.toLocaleDateString()
+                    newFecha = newFecha.toLocaleDateString('en-US')
                     break;
                 }
-                newFecha = recogerNormal.toLocaleDateString();
+                newFecha = recogerNormal.toLocaleDateString('en-US');
                 break;
             case 5:
                 var recogerNormal = new Date();
@@ -143,8 +143,8 @@ async function impresora() {
                 cuenta = 3;
                 for (let index = 0; index < 3; index++) {
                     festivo.setDate(festivo.getDate() + 1);
-                    console.log(festivo.toLocaleDateString());
-                    if (festivos.includes(festivo.toLocaleDateString())) {
+                    console.log(festivo.toLocaleDateString('en-US'));
+                    if (festivos.includes(festivo.toLocaleDateString('en-US'))) {
                         cuenta++;
                         console.log("hubo festivo");
                     } else {
@@ -159,13 +159,13 @@ async function impresora() {
                     recogerNormal.setDate(recogerNormal.getDate()+1);
                 }
                 
-                if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
                     newFecha = recogerNormal
                     newFecha.setDate(newFecha.getDate()+1)
-                    newFecha = newFecha.toLocaleDateString()
+                    newFecha = newFecha.toLocaleDateString('en-US')
                     break;
                 }
-                newFecha = recogerNormal.toLocaleDateString();
+                newFecha = recogerNormal.toLocaleDateString('en-US');
                 break;
             case 6:
                 var recogerNormal = new Date();
@@ -173,8 +173,8 @@ async function impresora() {
                 cuenta = 2;
                 for (let index = 0; index < 2; index++) {
                     festivo.setDate(festivo.getDate() + 1);
-                    console.log(festivo.toLocaleDateString());
-                    if (festivos.includes(festivo.toLocaleDateString())) {
+                    console.log(festivo.toLocaleDateString('en-US'));
+                    if (festivos.includes(festivo.toLocaleDateString('en-US'))) {
                         cuenta++;
                         console.log("hubo festivo");
                     } else {
@@ -186,13 +186,13 @@ async function impresora() {
                 if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                     recogerNormal.setDate(recogerNormal.getDate()+1);
                 }
-                if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
                     newFecha = recogerNormal
                     newFecha.setDate(newFecha.getDate()+1)
-                    newFecha = newFecha.toLocaleDateString()
+                    newFecha = newFecha.toLocaleDateString('en-US')
                     break;
                 }
-                newFecha = recogerNormal.toLocaleDateString();
+                newFecha = recogerNormal.toLocaleDateString('en-US');
                 break;
             default:
                 newFecha = 'Los domingos no atendemos :)';
@@ -208,8 +208,8 @@ async function impresora() {
                 cuenta = 3;
                 for (let index = 0; index < 3; index++) {
                     festivo.setDate(festivo.getDate() + 1);
-                    console.log(festivo.toLocaleDateString());
-                    if (festivos.includes(festivo.toLocaleDateString())) {
+                    console.log(festivo.toLocaleDateString('en-US'));
+                    if (festivos.includes(festivo.toLocaleDateString('en-US'))) {
                         cuenta++;
                         console.log("hubo festivo");
                     } else {
@@ -220,22 +220,22 @@ async function impresora() {
 
                 if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                     recogerNormal.setDate(recogerNormal.getDate()+1);
-                    if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                    if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
                         newFecha = recogerNormal
                         newFecha.setDate(newFecha.getDate()+3)
-                        newFecha = newFecha.toLocaleDateString()
+                        newFecha = newFecha.toLocaleDateString('en-US')
                         break;
                     }
-                    newFecha = recogerNormal.toLocaleDateString();
+                    newFecha = recogerNormal.toLocaleDateString('en-US');
                     break;
                 }
-                if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
                     newFecha = recogerNormal
                     newFecha.setDate(newFecha.getDate()+1)
-                    newFecha = newFecha.toLocaleDateString()
+                    newFecha = newFecha.toLocaleDateString('en-US')
                     break;
                 }
-                newFecha = recogerNormal.toLocaleDateString();
+                newFecha = recogerNormal.toLocaleDateString('en-US');
                 break;
             case 2:
                 var recogerNormal = new Date();
@@ -243,8 +243,8 @@ async function impresora() {
                 cuenta = 3;
                 for (let index = 0; index < 3; index++) {
                     festivo.setDate(festivo.getDate() + 1);
-                    console.log(festivo.toLocaleDateString());
-                    if (festivos.includes(festivo.toLocaleDateString())) {
+                    console.log(festivo.toLocaleDateString('en-US'));
+                    if (festivos.includes(festivo.toLocaleDateString('en-US'))) {
                         cuenta++;
                         console.log("hubo festivo");
                     } else {
@@ -255,23 +255,23 @@ async function impresora() {
 
                 if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                     recogerNormal.setDate(recogerNormal.getDate()+3);
-                    if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                    if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
                         newFecha = recogerNormal
                         newFecha.setDate(newFecha.getDate()+1)
-                        newFecha = newFecha.toLocaleDateString()
+                        newFecha = newFecha.toLocaleDateString('en-US')
                         break;
                     }
-                    newFecha = recogerNormal.toLocaleDateString();
+                    newFecha = recogerNormal.toLocaleDateString('en-US');
                     break;
                 }
 
-                if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
                     newFecha = recogerNormal
                     newFecha.setDate(newFecha.getDate()+3)
-                    newFecha = newFecha.toLocaleDateString()
+                    newFecha = newFecha.toLocaleDateString('en-US')
                     break;
                 }
-                newFecha = recogerNormal.toLocaleDateString();
+                newFecha = recogerNormal.toLocaleDateString('en-US');
                 break;
             case 3:
                 var recogerNormal = new Date();
@@ -279,8 +279,8 @@ async function impresora() {
                 cuenta = 5;
                 for (let index = 0; index < 5; index++) {
                     festivo.setDate(festivo.getDate() + 1);
-                    console.log(festivo.toLocaleDateString());
-                    if (festivos.includes(festivo.toLocaleDateString())) {
+                    console.log(festivo.toLocaleDateString('en-US'));
+                    if (festivos.includes(festivo.toLocaleDateString('en-US'))) {
                         cuenta++;
                         console.log("hubo festivo");
                     } else {
@@ -293,13 +293,13 @@ async function impresora() {
                     recogerNormal.setDate(recogerNormal.getDate()+1);
                 }
 
-                if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
                     newFecha = recogerNormal
                     newFecha.setDate(newFecha.getDate()+1)
-                    newFecha = newFecha.toLocaleDateString()
+                    newFecha = newFecha.toLocaleDateString('en-US')
                     break;
                 }
-                newFecha = recogerNormal.toLocaleDateString();
+                newFecha = recogerNormal.toLocaleDateString('en-US');
                 break;
             case 4:
                 var recogerNormal = new Date();
@@ -307,8 +307,8 @@ async function impresora() {
                 cuenta = 5;
                 for (let index = 0; index < 5; index++) {
                     festivo.setDate(festivo.getDate() + 1);
-                    console.log(festivo.toLocaleDateString());
-                    if (festivos.includes(festivo.toLocaleDateString())) {
+                    console.log(festivo.toLocaleDateString('en-US'));
+                    if (festivos.includes(festivo.toLocaleDateString('en-US'))) {
                         cuenta++;
                         console.log("hubo festivo");
                     } else {
@@ -321,13 +321,13 @@ async function impresora() {
                     recogerNormal.setDate(recogerNormal.getDate()+1);
                     
                 }
-                if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
                     newFecha = recogerNormal
                     newFecha.setDate(newFecha.getDate()+1)
-                    newFecha = newFecha.toLocaleDateString()
+                    newFecha = newFecha.toLocaleDateString('en-US')
                     break;
                 }
-                newFecha = recogerNormal.toLocaleDateString();
+                newFecha = recogerNormal.toLocaleDateString('en-US');
                 break;
             case 5:
                 var recogerNormal = new Date();
@@ -335,8 +335,8 @@ async function impresora() {
                 cuenta = 5;
                 for (let index = 0; index < 5; index++) {
                     festivo.setDate(festivo.getDate() + 1);
-                    console.log(festivo.toLocaleDateString());
-                    if (festivos.includes(festivo.toLocaleDateString())) {
+                    console.log(festivo.toLocaleDateString('en-US'));
+                    if (festivos.includes(festivo.toLocaleDateString('en-US'))) {
                         cuenta++;
                         console.log("hubo festivo");
                     } else {
@@ -348,13 +348,13 @@ async function impresora() {
                 if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                     recogerNormal.setDate(recogerNormal.getDate()+1);
                 }
-                if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
                     newFecha = recogerNormal
                     newFecha.setDate(newFecha.getDate()+1)
-                    newFecha = newFecha.toLocaleDateString()
+                    newFecha = newFecha.toLocaleDateString('en-US')
                     break;
                 }
-                newFecha = recogerNormal.toLocaleDateString();
+                newFecha = recogerNormal.toLocaleDateString('en-US');
                 break;
             case 6:
                 var recogerNormal = new Date();
@@ -362,8 +362,8 @@ async function impresora() {
                 cuenta = 4;
                 for (let index = 0; index < 4; index++) {
                     festivo.setDate(festivo.getDate() + 1);
-                    console.log(festivo.toLocaleDateString());
-                    if (festivos.includes(festivo.toLocaleDateString())) {
+                    console.log(festivo.toLocaleDateString('en-US'));
+                    if (festivos.includes(festivo.toLocaleDateString('en-US'))) {
                         cuenta++;
                         console.log("hubo festivo");
                     } else {
@@ -376,13 +376,13 @@ async function impresora() {
                     recogerNormal.setDate(recogerNormal.getDate()+1);
                 }
 
-                if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
                     newFecha = recogerNormal
                     newFecha.setDate(newFecha.getDate()+1)
-                    newFecha = newFecha.toLocaleDateString()
+                    newFecha = newFecha.toLocaleDateString('en-US')
                     break;
                 }
-                newFecha = recogerNormal.toLocaleDateString();
+                newFecha = recogerNormal.toLocaleDateString('en-US');
                 break;
             default:
                 newFecha = 'Los domingos no atendemos :)';
@@ -398,8 +398,8 @@ async function impresora() {
                     cuenta = 1;
                     for (let index = 0; index < 1; index++) {
                         festivo.setDate(festivo.getDate() + 1);
-                        console.log(festivo.toLocaleDateString());
-                        if (festivos.includes(festivo.toLocaleDateString())) {
+                        console.log(festivo.toLocaleDateString('en-US'));
+                        if (festivos.includes(festivo.toLocaleDateString('en-US'))) {
                             cuenta++;
                             console.log("hubo festivo");
                         } else {
@@ -413,30 +413,30 @@ async function impresora() {
                             recogerNormal.setDate(recogerNormal.getDate()+1);
                         }
                         
-                        if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                        if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
                             newFecha = recogerNormal
                             newFecha.setDate(newFecha.getDate()+1)
-                            newFecha = newFecha.toLocaleDateString()
+                            newFecha = newFecha.toLocaleDateString('en-US')
                             break;
                         }
-                        newFecha = recogerNormal.toLocaleDateString();
+                        newFecha = recogerNormal.toLocaleDateString('en-US');
                         console.log(newFecha + " " + hour);
                         break;
                     }
                     if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                         recogerNormal.setDate(recogerNormal.getDate()+cuenta+1);
-                        if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                        if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
                             newFecha = recogerNormal
                             newFecha.setDate(newFecha.getDate()+1)
-                            newFecha = newFecha.toLocaleDateString()
+                            newFecha = newFecha.toLocaleDateString('en-US')
                             break;
                         }
-                        newFecha = recogerNormal.toLocaleDateString();
+                        newFecha = recogerNormal.toLocaleDateString('en-US');
                         break;
                     }
                     
                     recogerNormal.setDate(recogerNormal.getDate());
-                    newFecha = recogerNormal.toLocaleDateString() + " de 2:00pm a 5:30pm";
+                    newFecha = recogerNormal.toLocaleDateString('en-US') + " de 2:00pm a 5:30pm";
                     console.log(newFecha);
                     break;
                 case 2:
@@ -446,8 +446,8 @@ async function impresora() {
                     cuenta = 1;
                     for (let index = 0; index < 1; index++) {
                         festivo.setDate(festivo.getDate() + 1);
-                        console.log(festivo.toLocaleDateString());
-                        if (festivos.includes(festivo.toLocaleDateString())) {
+                        console.log(festivo.toLocaleDateString('en-US'));
+                        if (festivos.includes(festivo.toLocaleDateString('en-US'))) {
                             cuenta++;
                             console.log("hubo festivo");
                         } else {
@@ -460,29 +460,29 @@ async function impresora() {
                         if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                             recogerNormal.setDate(recogerNormal.getDate()+1);
                         }
-                        if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                        if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
                             newFecha = recogerNormal
                             newFecha.setDate(newFecha.getDate()+1)
-                            newFecha = newFecha.toLocaleDateString()
+                            newFecha = newFecha.toLocaleDateString('en-US')
                             break;
                         }
-                        newFecha = recogerNormal.toLocaleDateString();
+                        newFecha = recogerNormal.toLocaleDateString('en-US');
                         console.log(newFecha + " " + hour);
                         break;
                     }
                     if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                         recogerNormal.setDate(recogerNormal.getDate()+cuenta+1);
-                        if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                        if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
                             newFecha = recogerNormal
                             newFecha.setDate(newFecha.getDate()+1)
-                            newFecha = newFecha.toLocaleDateString()
+                            newFecha = newFecha.toLocaleDateString('en-US')
                             break;
                         }
-                        newFecha = recogerNormal.toLocaleDateString();
+                        newFecha = recogerNormal.toLocaleDateString('en-US');
                         break;
                     }
                     recogerNormal.setDate(recogerNormal.getDate());
-                    newFecha = recogerNormal.toLocaleDateString() + " de 2:00pm a 5:30pm";
+                    newFecha = recogerNormal.toLocaleDateString('en-US') + " de 2:00pm a 5:30pm";
                     console.log(newFecha);
                     break;
                 case 3:
@@ -492,8 +492,8 @@ async function impresora() {
                     cuenta = 1;
                     for (let index = 0; index < 1; index++) {
                         festivo.setDate(festivo.getDate() + 1);
-                        console.log(festivo.toLocaleDateString());
-                        if (festivos.includes(festivo.toLocaleDateString())) {
+                        console.log(festivo.toLocaleDateString('en-US'));
+                        if (festivos.includes(festivo.toLocaleDateString('en-US'))) {
                             cuenta++;
                             console.log("hubo festivo");
                         } else {
@@ -505,31 +505,31 @@ async function impresora() {
 
                         if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                             recogerNormal.setDate(recogerNormal.getDate()+1);
-                            if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                            if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
                                 newFecha = recogerNormal
                                 newFecha.setDate(newFecha.getDate()+3)
-                                newFecha = newFecha.toLocaleDateString()
+                                newFecha = newFecha.toLocaleDateString('en-US')
                                 break;
                             }
                         }
-                        newFecha = recogerNormal.toLocaleDateString();
+                        newFecha = recogerNormal.toLocaleDateString('en-US');
                         console.log(newFecha + " " + hour);
                         break;
                     }
                     if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                         recogerNormal.setDate(recogerNormal.getDate()+cuenta+1);
-                        if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                        if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
                             newFecha = recogerNormal
                             newFecha.setDate(newFecha.getDate()+3)
-                            newFecha = newFecha.toLocaleDateString()
+                            newFecha = newFecha.toLocaleDateString('en-US')
                             break;
                         }
                             newFecha = recogerNormal
-                            newFecha = newFecha.toLocaleDateString()
+                            newFecha = newFecha.toLocaleDateString('en-US')
                             break;
                     }
                     recogerNormal.setDate(recogerNormal.getDate());
-                    newFecha = recogerNormal.toLocaleDateString() + " de 2:00pm a 5:30pm";
+                    newFecha = recogerNormal.toLocaleDateString('en-US') + " de 2:00pm a 5:30pm";
                     console.log(newFecha);
                     break;
                 case 4:
@@ -539,8 +539,8 @@ async function impresora() {
                     cuenta = 1;
                     for (let index = 0; index < 1; index++) {
                         festivo.setDate(festivo.getDate() + 1);
-                        console.log(festivo.toLocaleDateString());
-                        if (festivos.includes(festivo.toLocaleDateString())) {
+                        console.log(festivo.toLocaleDateString('en-US'));
+                        if (festivos.includes(festivo.toLocaleDateString('en-US'))) {
                             cuenta++;
                             console.log("hubo festivo");
                         } else {
@@ -552,31 +552,31 @@ async function impresora() {
 
                         if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                             recogerNormal.setDate(recogerNormal.getDate()+3);
-                            if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                            if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
                                 newFecha = recogerNormal
                                 newFecha.setDate(newFecha.getDate()+1)
-                                newFecha = newFecha.toLocaleDateString()
+                                newFecha = newFecha.toLocaleDateString('en-US')
                                 break;
                             }
                         }
-                        newFecha = recogerNormal.toLocaleDateString();
+                        newFecha = recogerNormal.toLocaleDateString('en-US');
                         console.log(newFecha + " " + hour);
                         break;
                     }
                     if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                         recogerNormal.setDate(recogerNormal.getDate()+cuenta+3);
-                        if (festivos.includes(recogerNormal.toLocaleDateString())) {
+                        if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
                             newFecha = recogerNormal
                             newFecha.setDate(newFecha.getDate()+1)
-                            newFecha = newFecha.toLocaleDateString()
+                            newFecha = newFecha.toLocaleDateString('en-US')
                             break;
                         }
                         newFecha = recogerNormal
-                        newFecha = newFecha.toLocaleDateString()
+                        newFecha = newFecha.toLocaleDateString('en-US')
                         break;
                     }
                     recogerNormal.setDate(recogerNormal.getDate());
-                    newFecha = recogerNormal.toLocaleDateString() + " de 2:00pm a 5:30pm";
+                    newFecha = recogerNormal.toLocaleDateString('en-US') + " de 2:00pm a 5:30pm";
                     console.log(newFecha);
                     break;
                 case 5:
@@ -586,8 +586,8 @@ async function impresora() {
                     cuenta = 3;
                     for (let index = 0; index < 3; index++) {
                         festivo.setDate(festivo.getDate() + 1);
-                        console.log(festivo.toLocaleDateString());
-                        if (festivos.includes(festivo.toLocaleDateString())) {
+                        console.log(festivo.toLocaleDateString('en-US'));
+                        if (festivos.includes(festivo.toLocaleDateString('en-US'))) {
                             cuenta++;
                             console.log("hubo festivo");
                         } else {
@@ -601,18 +601,18 @@ async function impresora() {
                             recogerNormal.setDate(recogerNormal.getDate()+1);
                             console.log("coincide");
                         }
-                        newFecha = recogerNormal.toLocaleDateString();
+                        newFecha = recogerNormal.toLocaleDateString('en-US');
                         console.log(newFecha + " " + hour);
                         break;
                     }
                     if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                         recogerNormal.setDate(recogerNormal.getDate()+cuenta+1);
-                        newFecha = recogerNormal.toLocaleDateString();
+                        newFecha = recogerNormal.toLocaleDateString('en-US');
                         break;
                     }
                     
                     recogerNormal.setDate(recogerNormal.getDate());
-                    newFecha = recogerNormal.toLocaleDateString() + " de 2:00pm a 5:30pm";
+                    newFecha = recogerNormal.toLocaleDateString('en-US') + " de 2:00pm a 5:30pm";
                     console.log(newFecha);
                     break;
                 case 6:
@@ -622,8 +622,8 @@ async function impresora() {
                     cuenta = 3;
                     for (let index = 0; index < 3; index++) {
                         festivo.setDate(festivo.getDate() + 1);
-                        console.log(festivo.toLocaleDateString());
-                        if (festivos.includes(festivo.toLocaleDateString())) {
+                        console.log(festivo.toLocaleDateString('en-US'));
+                        if (festivos.includes(festivo.toLocaleDateString('en-US'))) {
                             cuenta++;
                             console.log("hubo festivo");
                         } else {
@@ -635,7 +635,7 @@ async function impresora() {
                     if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                         recogerNormal.setDate(recogerNormal.getDate()+1);
                     }
-                    newFecha = recogerNormal.toLocaleDateString();
+                    newFecha = recogerNormal.toLocaleDateString('en-US');
                     console.log(newFecha);
                     break;
                 default:
@@ -686,7 +686,7 @@ async function impresora() {
     doc.setFontSize(8)
     doc.text(estudioSplit, 2.5, 55)
     doc.setFontSize(10)
-    doc.text('Fecha de realizacion: '+fecha.toLocaleDateString(),2.5, 70)
+    doc.text('Fecha de realizacion: '+fecha.toLocaleDateString('en-US'),2.5, 70)
     if(newFecha.length > 12){
         doc.text('Fecha de entrega: ',2.5, 75)    
         doc.text(newFecha, 2.5, 80)
