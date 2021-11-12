@@ -81,9 +81,7 @@ async function impresora() {
                     }
                 }
                 recogerNormal.setDate(recogerNormal.getDate()+cuenta);
-                if (document.getElementById("hayFestivo").checked) {
-                    recogerNormal.setDate(recogerNormal.getDate()+1);
-                }
+                
                 if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                     recogerNormal.setDate(recogerNormal.getDate()+1);
                     if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
@@ -152,9 +150,7 @@ async function impresora() {
                     }
                 }
                 recogerNormal.setDate(recogerNormal.getDate()+cuenta);
-                if (document.getElementById("hayFestivo").checked) {
-                    recogerNormal.setDate(recogerNormal.getDate()+1);
-                }
+                
                 if(tacReg.test(document.getElementById("estudios-dropdown").value)){
                     recogerNormal.setDate(recogerNormal.getDate()+1);
                 }
