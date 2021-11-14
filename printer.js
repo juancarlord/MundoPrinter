@@ -372,12 +372,6 @@ async function impresora() {
                     recogerNormal.setDate(recogerNormal.getDate()+1);
                 }
 
-                if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
-                    newFecha = recogerNormal
-                    newFecha.setDate(newFecha.getDate()+1)
-                    newFecha = newFecha.toLocaleDateString('en-US')
-                    break;
-                }
                 newFecha = recogerNormal.toLocaleDateString('en-US');
                 break;
             default:
@@ -615,8 +609,8 @@ async function impresora() {
                     var recogerNormal = new Date();
                     var festivo = new Date();
                     var hour = recogerNormal.getHours();
-                    cuenta = 3;
-                    for (let index = 0; index < 3; index++) {
+                    cuenta = 2;
+                    for (let index = 0; index < 2; index++) {
                         festivo.setDate(festivo.getDate() + 1);
                         console.log(festivo.toLocaleDateString('en-US'));
                         if (festivos.includes(festivo.toLocaleDateString('en-US'))) {
@@ -654,53 +648,65 @@ async function impresora() {
     var nombreCompleto = nombre1+' '+nombre2+' '+apellido1+' '+apellido2;
     var lineHeight = 1.2, pageWidth = 72, margin = 0.5, maxLineWidth = pageWidth - margin *2, oneLineHeight = (10*lineHeight)/72;
     document.getElementById("itf").style.display = "none";
-    JsBarcode("#itf", cedula, {format: "code128", width: 2, height: 50, displayValue: false});
-
+    // JsBarcode("#itf", cedula, {format: "code128", width: 2, height: 50, displayValue: false});
+    var qr = new QRious({
+        element: document.getElementById('itf'),
+        value: 'http://181.59.255.131/patientportal'
+    })
+    
     const img = document.querySelector('img#itf');
     const doc = new jsPDF({
         orientation: "portrait",
         unit: "mm",
-        format: [72, 310]
+        format: [72, 410]
     });
     doc.setFontSize(12);
     doc.setFont("helvetica", 'bold')
     doc.text("MUNDO RADIOLOGICO S.A.S", 7, 10);
     doc.setFontSize(9)
     doc.text('TICKET DE RESULTADOS', 16, 15)
-    doc.text(entidad, 50, 25)
-    doc.text('Nombre del paciente', 2.5, 30)
     doc.setFont("helvetica", 'normal')
-    doc.text(nombreCompleto, 2.5, 35)
+    doc.text("Acceda a su estudio en el siguiente enlace:", 36, 20, 'center')
     doc.setFont("helvetica", 'bold')
-    doc.text('Documento', 2.5, 40)
+    doc.text("http://181.59.255.131/patientportal", 36, 25, 'center')
     doc.setFont("helvetica", 'normal')
-    doc.text((documento +' '+ cedula), 2.5, 45)
+    doc.text("Ingresando los siguientes datos:", 36, 30, 'center')
     doc.setFont("helvetica", 'bold')
-    doc.text('Estudio realizado', 2.5, 50)
+    doc.text(("Usuario: "+ cedula), 36, 35, 'center')
+    doc.text(("Contraseña: "+ cedula), 36, 40, 'center')
+    doc.text(entidad, 50, 45,)
+    doc.text('Nombre del paciente', 2.5, 50)
+    doc.setFont("helvetica", 'normal')
+    doc.text(nombreCompleto, 2.5, 55)
+    doc.setFont("helvetica", 'bold')
+    doc.text('Documento', 2.5, 60)
+    doc.setFont("helvetica", 'normal')
+    doc.text((documento +' '+ cedula), 2.5, 65)
+    doc.setFont("helvetica", 'bold')
+    doc.text('Estudio realizado', 2.5, 70)
     doc.setFont("helvetica", 'normal')
     var estudioSplit = doc.splitTextToSize(estudios, maxLineWidth)
     doc.setFontSize(8)
-    doc.text(estudioSplit, 2.5, 55)
+    doc.text(estudioSplit, 2.5, 75)
     doc.setFontSize(10)
-    doc.text('Fecha de realizacion: '+fecha.toLocaleDateString('en-US'),2.5, 70)
-    if(newFecha.length > 12){
-        doc.text('Fecha de entrega: ',2.5, 75)    
-        doc.text(newFecha, 2.5, 80)
-        doc.addImage(img.src, 'PNG', 2, 81)
+    doc.text('Fecha de realizacion: '+fecha.toLocaleDateString('en-US'),2.5, 90)
+    if(newFecha.length > 12){//newFecha.length > 12
+        doc.text('Fecha de entrega: ',2.5, 95)    
+        doc.text(newFecha, 2.5, 100)
+        doc.addImage(img.src, 'PNG', 22, 103)
         doc.setFontSize(6)
-        doc.text('Entrega de resultados: \nLunes a Viernes 8:00 am a 11:30 y de 2:00 pm a 5:30 pm ',36, 100,'center')
-        doc.text('Sábados de 8:00 am a 11:30am',36, 106, 'center')
-        doc.text('Los resultados se entregan UNICAMENTE con este ticket o \n con su documento de identificación',36, 109, 'center')
-        doc.text('Si requiere copia de sus resultados debe cancelar \n el valor correspondiente.',36, 115, 'center')
+        doc.text('Entrega de resultados: \nLunes a Viernes 8:00 am a 11:30 y de 2:00 pm a 5:30 pm ',36, 135,'center')
+        doc.text('Sábados de 8:00 am a 11:30am',36, 140, 'center')
+        doc.text('Si su dispositivo es Apple debe desbloquear las ventanas emergentes \n para visualizar las imagenes',36, 145, 'center')
+        
     }
     else {
-    doc.text('Fecha de entrega: '+newFecha,2.5, 75)
-    doc.addImage(img.src, 'PNG', 2, 76)
+    doc.text('Fecha de entrega: '+newFecha,2.5, 95)
+    doc.addImage(img.src, 'PNG', 22, 97)
     doc.setFontSize(6)
-    doc.text('Entrega de resultados: \nLunes a Viernes 8:00 am a 11:30 y de 2:00 pm a 5:30 pm ',36, 95,'center')
-    doc.text('Sábados de 8:00 am a 11:30am',36, 101, 'center')
-    doc.text('Los resultados se entregan UNICAMENTE con este ticket o \n con su documento de identificación',36, 104, 'center')
-    doc.text('Si requiere copia de sus resultados debe cancelar \n el valor correspondiente.',36, 110, 'center')
+    doc.text('Entrega de resultados: \nLunes a Viernes 8:00 am a 11:30 y de 2:00 pm a 5:30 pm ',36, 125,'center')
+    doc.text('Sábados de 8:00 am a 11:30am',36, 130, 'center')
+    doc.text('Si su dispositivo es Apple debe desbloquear las ventanas emergentes \n para visualizar las imagenes',36, 135, 'center')
     }
     doc.save("resultados.pdf"); // will save the file in the current working directory
     doc.close();
