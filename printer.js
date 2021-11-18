@@ -658,22 +658,22 @@ async function impresora() {
     const doc = new jsPDF({
         orientation: "portrait",
         unit: "mm",
-        format: [72, 410]
+        format: [76, 410]
     });
-    doc.setFontSize(12);
+    doc.setFontSize(14);
     doc.setFont("helvetica", 'bold')
-    doc.text("MUNDO RADIOLOGICO S.A.S", 7, 10);
-    doc.setFontSize(9)
-    doc.text('TICKET DE RESULTADOS', 16, 15)
+    doc.text("MUNDO RADIOLOGICO S.A.S", 38, 7, 'center');
+    doc.setFontSize(11)
+    doc.text('TICKET DE RESULTADOS', 38, 15, 'center')
     doc.setFont("helvetica", 'normal')
-    doc.text("Acceda a su estudio en el siguiente enlace:", 36, 20, 'center')
+    doc.text("Acceda a su estudio en el siguiente enlace:", 38, 20, 'center')
     doc.setFont("helvetica", 'bold')
-    doc.text("http://181.59.255.131/patientportal", 36, 25, 'center')
+    doc.text("http://181.59.255.131/patientportal", 38, 25, 'center')
     doc.setFont("helvetica", 'normal')
-    doc.text("Ingresando los siguientes datos:", 36, 30, 'center')
+    doc.text("Ingresando los siguientes datos:", 38, 30, 'center')
     doc.setFont("helvetica", 'bold')
-    doc.text(("Usuario: "+ cedula), 36, 35, 'center')
-    doc.text(("Contraseña: "+ cedula), 36, 40, 'center')
+    doc.text(("Usuario: "+ cedula), 38, 35, 'center')
+    doc.text(("Contraseña: "+ cedula), 38, 40, 'center')
     doc.text(entidad, 50, 45,)
     doc.text('Nombre del paciente', 2.5, 50)
     doc.setFont("helvetica", 'normal')
@@ -686,27 +686,27 @@ async function impresora() {
     doc.text('Estudio realizado', 2.5, 70)
     doc.setFont("helvetica", 'normal')
     var estudioSplit = doc.splitTextToSize(estudios, maxLineWidth)
-    doc.setFontSize(8)
-    doc.text(estudioSplit, 2.5, 75)
     doc.setFontSize(10)
-    doc.text('Fecha de realizacion: '+fecha.toLocaleDateString('en-US'),2.5, 90)
+    doc.text(estudioSplit, 2.5, 75)
+    doc.setFontSize(12)
+    doc.text('Fecha de realizacion: '+fecha.toLocaleDateString('en-US'),2.5, 92)
     if(newFecha.length > 12){//newFecha.length > 12
-        doc.text('Fecha de entrega: ',2.5, 95)    
+        doc.text('Fecha de entrega: ',2.5, 97)    
         doc.text(newFecha, 2.5, 100)
-        doc.addImage(img.src, 'PNG', 22, 103)
-        doc.setFontSize(6)
-        doc.text('Entrega de resultados: \nLunes a Viernes 8:00 am a 11:30 y de 2:00 pm a 5:30 pm ',36, 135,'center')
-        doc.text('Sábados de 8:00 am a 11:30am',36, 140, 'center')
-        doc.text('Si su dispositivo es Apple debe desbloquear las ventanas emergentes \n para visualizar las imagenes',36, 145, 'center')
+        doc.addImage(img.src, 'PNG', 22, 104)
+        doc.setFontSize(8)
+        doc.text('Entrega de resultados: \nLunes a Viernes 8:00 am a 11:30 y de 2:00 pm a 5:30 pm ',38, 135,'center')
+        doc.text('Sábados de 8:00 am a 11:30am',38, 142, 'center')
+        doc.text('Si su dispositivo es Apple debe desbloquear las ventanas\n emergentes para visualizar las imagenes',38, 147, 'center')
         
     }
     else {
-    doc.text('Fecha de entrega: '+newFecha,2.5, 95)
-    doc.addImage(img.src, 'PNG', 22, 97)
-    doc.setFontSize(6)
-    doc.text('Entrega de resultados: \nLunes a Viernes 8:00 am a 11:30 y de 2:00 pm a 5:30 pm ',36, 125,'center')
-    doc.text('Sábados de 8:00 am a 11:30am',36, 130, 'center')
-    doc.text('Si su dispositivo es Apple debe desbloquear las ventanas emergentes \n para visualizar las imagenes',36, 135, 'center')
+    doc.text('Fecha de entrega: '+newFecha,2.5, 97)
+    doc.addImage(img.src, 'PNG', 22, 98)
+    doc.setFontSize(8)
+    doc.text('Entrega de resultados: \nLunes a Viernes 8:00 am a 11:30 y de 2:00 pm a 5:30 pm ',38, 125,'center')
+    doc.text('Sábados de 8:00 am a 11:30am',38, 132, 'center')
+    doc.text('Si su dispositivo es Apple debe desbloquear las ventanas \n emergentes para visualizar las imagenes',38, 137, 'center')
     }
     doc.save("resultados.pdf"); // will save the file in the current working directory
     doc.close();
