@@ -7,6 +7,8 @@ async function impresora() {
     "12/8/2022"
     ]
     var tacReg = new RegExp('^'+ "TAC");
+    var MamReg = new RegExp('^'+ "MAMOGRAFIA");
+    var OstReg = new RegExp('^'+ "OSTEODENSITOMETRIA");
     console.log(document.getElementById("estudios-dropdown").value);
     var entidad = document.getElementById('entidad').value;
     var fecha = new Date();
@@ -28,7 +30,7 @@ async function impresora() {
                 }
                 recogerNormal.setDate(recogerNormal.getDate()+cuenta);
 
-                if(tacReg.test(document.getElementById("estudios-dropdown").value)){
+                if(tacReg.test(document.getElementById("estudios-dropdown").value) ||  MamReg.test(document.getElementById("estudios-dropdown").value) || OstReg.test(document.getElementById("estudios-dropdown").value)){
                     recogerNormal.setDate(recogerNormal.getDate()+1);
                 }
                 if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
@@ -55,7 +57,7 @@ async function impresora() {
                 }
                 recogerNormal.setDate(recogerNormal.getDate()+cuenta);
                 
-                if(tacReg.test(document.getElementById("estudios-dropdown").value)){
+                if(tacReg.test(document.getElementById("estudios-dropdown").value) ||  MamReg.test(document.getElementById("estudios-dropdown").value) || OstReg.test(document.getElementById("estudios-dropdown").value)){
                     recogerNormal.setDate(recogerNormal.getDate()+1);
                 }
                 if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
@@ -82,7 +84,7 @@ async function impresora() {
                 }
                 recogerNormal.setDate(recogerNormal.getDate()+cuenta);
                 
-                if(tacReg.test(document.getElementById("estudios-dropdown").value)){
+                if(tacReg.test(document.getElementById("estudios-dropdown").value) ||  MamReg.test(document.getElementById("estudios-dropdown").value) || OstReg.test(document.getElementById("estudios-dropdown").value)){
                     recogerNormal.setDate(recogerNormal.getDate()+1);
                     if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
                         newFecha = recogerNormal
@@ -115,7 +117,7 @@ async function impresora() {
                 }
                 recogerNormal.setDate(recogerNormal.getDate()+cuenta);
 
-                if(tacReg.test(document.getElementById("estudios-dropdown").value)){
+                if(tacReg.test(document.getElementById("estudios-dropdown").value) ||  MamReg.test(document.getElementById("estudios-dropdown").value) || OstReg.test(document.getElementById("estudios-dropdown").value)){
                     recogerNormal.setDate(recogerNormal.getDate()+3);
                     if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
                         newFecha = recogerNormal
@@ -151,7 +153,7 @@ async function impresora() {
                 }
                 recogerNormal.setDate(recogerNormal.getDate()+cuenta);
                 
-                if(tacReg.test(document.getElementById("estudios-dropdown").value)){
+                if(tacReg.test(document.getElementById("estudios-dropdown").value) ||  MamReg.test(document.getElementById("estudios-dropdown").value) || OstReg.test(document.getElementById("estudios-dropdown").value)){
                     recogerNormal.setDate(recogerNormal.getDate()+1);
                 }
                 
@@ -179,7 +181,7 @@ async function impresora() {
                 }
                 recogerNormal.setDate(recogerNormal.getDate()+cuenta);
                 
-                if(tacReg.test(document.getElementById("estudios-dropdown").value)){
+                if(tacReg.test(document.getElementById("estudios-dropdown").value) ||  MamReg.test(document.getElementById("estudios-dropdown").value) || OstReg.test(document.getElementById("estudios-dropdown").value)){
                     recogerNormal.setDate(recogerNormal.getDate()+1);
                 }
                 if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
@@ -399,7 +401,7 @@ async function impresora() {
                     if (hour >= 12) {
                         recogerNormal.setDate(recogerNormal.getDate() + cuenta);
 
-                        if(tacReg.test(document.getElementById("estudios-dropdown").value)){
+                        if(tacReg.test(document.getElementById("estudios-dropdown").value) ||  MamReg.test(document.getElementById("estudios-dropdown").value) || OstReg.test(document.getElementById("estudios-dropdown").value)){
                             recogerNormal.setDate(recogerNormal.getDate()+1);
                         }
                         
@@ -413,7 +415,7 @@ async function impresora() {
                         console.log(newFecha + " " + hour);
                         break;
                     }
-                    if(tacReg.test(document.getElementById("estudios-dropdown").value)){
+                    if(tacReg.test(document.getElementById("estudios-dropdown").value) ||  MamReg.test(document.getElementById("estudios-dropdown").value) || OstReg.test(document.getElementById("estudios-dropdown").value)){
                         recogerNormal.setDate(recogerNormal.getDate()+cuenta+1);
                         if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
                             newFecha = recogerNormal
@@ -447,7 +449,7 @@ async function impresora() {
                     if (hour >= 12) {
                         recogerNormal.setDate(recogerNormal.getDate() + cuenta);
 
-                        if(tacReg.test(document.getElementById("estudios-dropdown").value)){
+                        if(tacReg.test(document.getElementById("estudios-dropdown").value) ||  MamReg.test(document.getElementById("estudios-dropdown").value) || OstReg.test(document.getElementById("estudios-dropdown").value)){
                             recogerNormal.setDate(recogerNormal.getDate()+1);
                         }
                         if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
@@ -460,7 +462,7 @@ async function impresora() {
                         console.log(newFecha + " " + hour);
                         break;
                     }
-                    if(tacReg.test(document.getElementById("estudios-dropdown").value)){
+                    if(tacReg.test(document.getElementById("estudios-dropdown").value) ||  MamReg.test(document.getElementById("estudios-dropdown").value) || OstReg.test(document.getElementById("estudios-dropdown").value)){
                         recogerNormal.setDate(recogerNormal.getDate()+cuenta+1);
                         if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
                             newFecha = recogerNormal
@@ -493,7 +495,7 @@ async function impresora() {
                     if (hour >= 12) {
                         recogerNormal.setDate(recogerNormal.getDate() + cuenta);
 
-                        if(tacReg.test(document.getElementById("estudios-dropdown").value)){
+                        if(tacReg.test(document.getElementById("estudios-dropdown").value) ||  MamReg.test(document.getElementById("estudios-dropdown").value) || OstReg.test(document.getElementById("estudios-dropdown").value)){
                             recogerNormal.setDate(recogerNormal.getDate()+1);
                             if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
                                 newFecha = recogerNormal
@@ -506,7 +508,7 @@ async function impresora() {
                         console.log(newFecha + " " + hour);
                         break;
                     }
-                    if(tacReg.test(document.getElementById("estudios-dropdown").value)){
+                    if(tacReg.test(document.getElementById("estudios-dropdown").value) ||  MamReg.test(document.getElementById("estudios-dropdown").value) || OstReg.test(document.getElementById("estudios-dropdown").value)){
                         recogerNormal.setDate(recogerNormal.getDate()+cuenta+1);
                         if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
                             newFecha = recogerNormal
@@ -540,7 +542,7 @@ async function impresora() {
                     if (hour >= 12) {
                         recogerNormal.setDate(recogerNormal.getDate() + cuenta);
 
-                        if(tacReg.test(document.getElementById("estudios-dropdown").value)){
+                        if(tacReg.test(document.getElementById("estudios-dropdown").value) ||  MamReg.test(document.getElementById("estudios-dropdown").value) || OstReg.test(document.getElementById("estudios-dropdown").value)){
                             recogerNormal.setDate(recogerNormal.getDate()+3);
                             if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
                                 newFecha = recogerNormal
@@ -553,7 +555,7 @@ async function impresora() {
                         console.log(newFecha + " " + hour);
                         break;
                     }
-                    if(tacReg.test(document.getElementById("estudios-dropdown").value)){
+                    if(tacReg.test(document.getElementById("estudios-dropdown").value) ||  MamReg.test(document.getElementById("estudios-dropdown").value) || OstReg.test(document.getElementById("estudios-dropdown").value)){
                         recogerNormal.setDate(recogerNormal.getDate()+cuenta+3);
                         if (festivos.includes(recogerNormal.toLocaleDateString('en-US'))) {
                             newFecha = recogerNormal
@@ -587,7 +589,7 @@ async function impresora() {
                     if (hour >= 12) {
                         recogerNormal.setDate(recogerNormal.getDate() + cuenta);
                         
-                        if(tacReg.test(document.getElementById("estudios-dropdown").value)){
+                        if(tacReg.test(document.getElementById("estudios-dropdown").value) ||  MamReg.test(document.getElementById("estudios-dropdown").value) || OstReg.test(document.getElementById("estudios-dropdown").value)){
                             recogerNormal.setDate(recogerNormal.getDate()+1);
                             console.log("coincide");
                         }
@@ -595,7 +597,7 @@ async function impresora() {
                         console.log(newFecha + " " + hour);
                         break;
                     }
-                    if(tacReg.test(document.getElementById("estudios-dropdown").value)){
+                    if(tacReg.test(document.getElementById("estudios-dropdown").value) ||  MamReg.test(document.getElementById("estudios-dropdown").value) || OstReg.test(document.getElementById("estudios-dropdown").value)){
                         recogerNormal.setDate(recogerNormal.getDate()+cuenta+1);
                         newFecha = recogerNormal.toLocaleDateString('en-US');
                         break;
@@ -622,7 +624,7 @@ async function impresora() {
                     }
                     recogerNormal.setDate(recogerNormal.getDate() + cuenta);
                     
-                    if(tacReg.test(document.getElementById("estudios-dropdown").value)){
+                    if(tacReg.test(document.getElementById("estudios-dropdown").value) ||  MamReg.test(document.getElementById("estudios-dropdown").value) || OstReg.test(document.getElementById("estudios-dropdown").value)){
                         recogerNormal.setDate(recogerNormal.getDate()+1);
                     }
                     newFecha = recogerNormal.toLocaleDateString('en-US');
