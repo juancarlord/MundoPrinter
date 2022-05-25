@@ -2,13 +2,15 @@ const { jsPDF } = require("jspdf");
 const { print } = require('pdf-to-printer');
 async function impresora() {
     var festivos = ["5/17/2021", "6/7/2021", "6/14/2021", "7/5/2021", "7/20/2021", "8/16/2021", "10/18/2021",
-    "11/1/2021", "11/15/2021", "12/8/2021", "1/10/2022", "3/21/2022", "4/14/2022", "4/15/2022", "5/17/2022",
-    "6/20/2022", "6/27/2022", "7/4/2022", "7/20/2022", "8/15/2022", "10/17/2022", "11/7/2022", "11/14/2022",
-    "12/8/2022"
+    "11/1/2021", "11/15/2021", "12/8/2021", "1/10/2022", "3/21/2022", "4/14/2022", "4/15/2022","5/1/2022", "5/30/2022",
+    "6/20/2022", "6/27/2022", "7/4/2022", "7/20/2022", "8/7/2022", "8/15/2022", "10/17/2022", "11/7/2022", "11/14/2022",
+    "12/8/2022", "12/25/2022"
     ]
     var tacReg = new RegExp('^'+ "TAC");
     var MamReg = new RegExp('^'+ "MAMOGRAFIA");
     var OstReg = new RegExp('^'+ "OSTEODENSITOMETRIA");
+    var RXReg = new RegExp('^'+ "RX");
+    console.log(RXReg.test(document.getElementById("estudios-dropdown").value));
     console.log(document.getElementById("estudios-dropdown").value);
     var entidad = document.getElementById('entidad').value;
     var fecha = new Date();
@@ -398,7 +400,7 @@ async function impresora() {
                             console.log("no se encontro festivo");
                         }
                     }
-                    if (hour >= 12) {
+                    if (hour >= 12 || RXReg.test(document.getElementById("estudios-dropdown").value)) {
                         recogerNormal.setDate(recogerNormal.getDate() + cuenta);
 
                         if(tacReg.test(document.getElementById("estudios-dropdown").value) ||  MamReg.test(document.getElementById("estudios-dropdown").value) || OstReg.test(document.getElementById("estudios-dropdown").value)){
@@ -446,7 +448,7 @@ async function impresora() {
                             console.log("no se encontro festivo");
                         }
                     }
-                    if (hour >= 12) {
+                    if (hour >= 12 || RXReg.test(document.getElementById("estudios-dropdown").value)) {
                         recogerNormal.setDate(recogerNormal.getDate() + cuenta);
 
                         if(tacReg.test(document.getElementById("estudios-dropdown").value) ||  MamReg.test(document.getElementById("estudios-dropdown").value) || OstReg.test(document.getElementById("estudios-dropdown").value)){
@@ -492,7 +494,7 @@ async function impresora() {
                             console.log("no se encontro festivo");
                         }
                     }
-                    if (hour >= 12) {
+                    if (hour >= 12 || RXReg.test(document.getElementById("estudios-dropdown").value)) {
                         recogerNormal.setDate(recogerNormal.getDate() + cuenta);
 
                         if(tacReg.test(document.getElementById("estudios-dropdown").value) ||  MamReg.test(document.getElementById("estudios-dropdown").value) || OstReg.test(document.getElementById("estudios-dropdown").value)){
@@ -539,7 +541,7 @@ async function impresora() {
                             console.log("no se encontro festivo");
                         }
                     }
-                    if (hour >= 12) {
+                    if (hour >= 12 || RXReg.test(document.getElementById("estudios-dropdown").value)) {
                         recogerNormal.setDate(recogerNormal.getDate() + cuenta);
 
                         if(tacReg.test(document.getElementById("estudios-dropdown").value) ||  MamReg.test(document.getElementById("estudios-dropdown").value) || OstReg.test(document.getElementById("estudios-dropdown").value)){
@@ -586,7 +588,7 @@ async function impresora() {
                             console.log("no se encontro festivo");
                         }
                     }
-                    if (hour >= 12) {
+                    if (hour >= 12 || RXReg.test(document.getElementById("estudios-dropdown").value)) {
                         recogerNormal.setDate(recogerNormal.getDate() + cuenta);
                         
                         if(tacReg.test(document.getElementById("estudios-dropdown").value) ||  MamReg.test(document.getElementById("estudios-dropdown").value) || OstReg.test(document.getElementById("estudios-dropdown").value)){
