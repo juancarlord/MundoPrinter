@@ -655,7 +655,7 @@ async function impresora() {
     // JsBarcode("#itf", cedula, {format: "code128", width: 2, height: 50, displayValue: false});
     var qr = new QRious({
         element: document.getElementById('itf'),
-        value: 'http://181.59.255.131/patientportal'
+        value: 'https://mundoradiologico.com/'
     })
     
     const img = document.querySelector('img#itf');
@@ -672,7 +672,7 @@ async function impresora() {
     doc.setFont("helvetica", 'normal')
     doc.text("Acceda a su estudio en el siguiente enlace:", 38, 20, 'center')
     doc.setFont("helvetica", 'bold')
-    doc.text("http://181.59.255.131/patientportal", 38, 25, 'center')
+    doc.text("https://mundoradiologico.com/", 38, 25, 'center')
     doc.setFont("helvetica", 'normal')
     doc.text("Ingresando los siguientes datos:", 38, 30, 'center')
     doc.setFont("helvetica", 'bold')
@@ -699,18 +699,18 @@ async function impresora() {
         doc.text(newFecha, 2.5, 100)
         doc.addImage(img.src, 'PNG', 22, 104)
         doc.setFontSize(8)
-        doc.text('Entrega de resultados: \nLunes a Viernes 8:00 am a 11:30 y de 2:00 pm a 5:30 pm ',38, 135,'center')
-        doc.text('Sábados de 8:00 am a 11:30am',38, 142, 'center')
-        doc.text('Si su dispositivo es Apple debe desbloquear las ventanas\n emergentes para visualizar las imagenes',38, 147, 'center')
+        doc.text('Entrega de resultados: \nLunes a Viernes 8:00 am a 11:30 y de 2:00 pm a 5:30 pm ',38, 137,'center')
+        doc.text('Sábados de 8:00 am a 11:30am',38, 144, 'center')
+        doc.text('Si su dispositivo es Apple debe desbloquear las ventanas\n emergentes para visualizar las imagenes',38, 149, 'center')
         
     }
     else {
     doc.text('Fecha de entrega: '+newFecha,2.5, 97)
     doc.addImage(img.src, 'PNG', 22, 98)
     doc.setFontSize(8)
-    doc.text('Entrega de resultados: \nLunes a Viernes 8:00 am a 11:30 y de 2:00 pm a 5:30 pm ',38, 125,'center')
-    doc.text('Sábados de 8:00 am a 11:30am',38, 132, 'center')
-    doc.text('Si su dispositivo es Apple debe desbloquear las ventanas \n emergentes para visualizar las imagenes',38, 137, 'center')
+    doc.text('Entrega de resultados: \nLunes a Viernes 8:00 am a 11:30 y de 2:00 pm a 5:30 pm ',38, 127,'center')
+    doc.text('Sábados de 8:00 am a 11:30am',38, 134, 'center')
+    doc.text('Si su dispositivo es Apple debe desbloquear las ventanas \n emergentes para visualizar las imagenes',38, 139, 'center')
     }
     doc.save("resultados.pdf"); // will save the file in the current working directory
     doc.close();
