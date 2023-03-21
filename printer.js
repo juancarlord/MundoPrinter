@@ -1,25 +1,26 @@
 const { jsPDF } = require("jspdf");
 const { print } = require('pdf-to-printer');
 async function impresora() {
-    var festivos = ["5/17/2021", "6/7/2021", "6/14/2021", "7/5/2021", "7/20/2021", "8/16/2021", "10/18/2021",
-    "11/1/2021", "11/15/2021", "12/8/2021", "1/10/2022", "3/21/2022", "4/14/2022", "4/15/2022","5/1/2022", "5/30/2022",
-    "6/20/2022", "6/27/2022", "7/4/2022", "7/20/2022", "8/7/2022", "8/15/2022", "10/17/2022", "11/7/2022", "11/14/2022",
-    "12/8/2022", "12/25/2022"
+    var festivos = ["3/20/2023", "4/2/2023", "4/6/2023", "4/7/2023", "4/9/2023", "5/1/2023", "5/22/2023",
+    "6/12/2023", "6/19/2023", "7/3/2023", "7/20/2023", "8/7/2023", "8/21/2023", "10/16/2023","11/6/2023", "11/13/2023",
+    "12/8/2023", "12/25/2023", "1/1/2024", "1/8/2024", "3/25/2024", "3/28/2024", "3/29/2024", "5/1/2024", "5/13/2024", "6/3/2024", "6/10/2024", "7/1/2024", "7/20/2024", "8/7/2024", "8/19/2024", "10/14/2024", "11/4/2024", "11/11/2024", "12/8/2024", "12/25/2024"
     ]
     var tacReg = new RegExp('^'+ "TAC");
     var MamReg = new RegExp('^'+ "MAMOGRAFIA");
     var OstReg = new RegExp('^'+ "OSTEODENSITOMETRIA");
     var RXReg = new RegExp('^'+ "RX");
+    var PieloReg = new RegExp('^' + "PIELOGRAFIA");
     console.log(RXReg.test(document.getElementById("estudios-dropdown").value));
     console.log(document.getElementById("estudios-dropdown").value);
     var entidad = document.getElementById('entidad').value;
     var fecha = new Date();
+    console.log(fecha.getDay());
     if (entidad == "PREPAGADA") {
         switch(fecha.getDay()){
             case 1:
                 var recogerNormal = new Date();
                 var festivo = new Date();
-                cuenta = 1;
+                cuenta = 2;
                 for (let index = 0; index < 1; index++) {
                     festivo.setDate(festivo.getDate() + 1);
                     console.log(festivo.toLocaleDateString('en-US'));
@@ -46,7 +47,7 @@ async function impresora() {
             case 2:
                 var recogerNormal = new Date();
                 var festivo = new Date();
-                cuenta = 1;
+                cuenta = 2;
                 for (let index = 0; index < 1; index++) {
                     festivo.setDate(festivo.getDate() + 1);
                     console.log(festivo.toLocaleDateString('en-US'));
@@ -73,7 +74,7 @@ async function impresora() {
             case 3:
                 var recogerNormal = new Date();
                 var festivo = new Date();
-                cuenta = 1;
+                cuenta = 2;
                 for (let index = 0; index < 1; index++) {
                     festivo.setDate(festivo.getDate() + 1);
                     console.log(festivo.toLocaleDateString('en-US'));
@@ -106,7 +107,7 @@ async function impresora() {
             case 4:
                 var recogerNormal = new Date();
                 var festivo = new Date();
-                cuenta = 1;
+                cuenta = 4;
                 for (let index = 0; index < 1; index++) {
                     festivo.setDate(festivo.getDate() + 1);
                     console.log(festivo.toLocaleDateString('en-US'));
@@ -142,7 +143,7 @@ async function impresora() {
             case 5:
                 var recogerNormal = new Date();
                 var festivo = new Date();
-                cuenta = 3;
+                cuenta = 4;
                 for (let index = 0; index < 3; index++) {
                     festivo.setDate(festivo.getDate() + 1);
                     console.log(festivo.toLocaleDateString('en-US'));
@@ -170,7 +171,7 @@ async function impresora() {
             case 6:
                 var recogerNormal = new Date();
                 var festivo = new Date();
-                cuenta = 2;
+                cuenta = 3;
                 for (let index = 0; index < 2; index++) {
                     festivo.setDate(festivo.getDate() + 1);
                     console.log(festivo.toLocaleDateString('en-US'));
@@ -205,7 +206,7 @@ async function impresora() {
             case 1:
                 var recogerNormal = new Date();
                 var festivo = new Date();
-                cuenta = 3;
+                cuenta = 4;
                 for (let index = 0; index < 3; index++) {
                     festivo.setDate(festivo.getDate() + 1);
                     console.log(festivo.toLocaleDateString('en-US'));
@@ -240,7 +241,7 @@ async function impresora() {
             case 2:
                 var recogerNormal = new Date();
                 var festivo = new Date();
-                cuenta = 3;
+                cuenta = 6;
                 for (let index = 0; index < 3; index++) {
                     festivo.setDate(festivo.getDate() + 1);
                     console.log(festivo.toLocaleDateString('en-US'));
@@ -276,7 +277,7 @@ async function impresora() {
             case 3:
                 var recogerNormal = new Date();
                 var festivo = new Date();
-                cuenta = 5;
+                cuenta = 6;
                 for (let index = 0; index < 5; index++) {
                     festivo.setDate(festivo.getDate() + 1);
                     console.log(festivo.toLocaleDateString('en-US'));
@@ -304,7 +305,7 @@ async function impresora() {
             case 4:
                 var recogerNormal = new Date();
                 var festivo = new Date();
-                cuenta = 5;
+                cuenta = 6;
                 for (let index = 0; index < 5; index++) {
                     festivo.setDate(festivo.getDate() + 1);
                     console.log(festivo.toLocaleDateString('en-US'));
@@ -332,7 +333,7 @@ async function impresora() {
             case 5:
                 var recogerNormal = new Date();
                 var festivo = new Date();
-                cuenta = 5;
+                cuenta = 6;
                 for (let index = 0; index < 5; index++) {
                     festivo.setDate(festivo.getDate() + 1);
                     console.log(festivo.toLocaleDateString('en-US'));
@@ -359,7 +360,7 @@ async function impresora() {
             case 6:
                 var recogerNormal = new Date();
                 var festivo = new Date();
-                cuenta = 4;
+                cuenta = 5;
                 for (let index = 0; index < 4; index++) {
                     festivo.setDate(festivo.getDate() + 1);
                     console.log(festivo.toLocaleDateString('en-US'));
@@ -400,7 +401,7 @@ async function impresora() {
                             console.log("no se encontro festivo");
                         }
                     }
-                    if (hour >= 12 || RXReg.test(document.getElementById("estudios-dropdown").value)) {
+                    if (hour >= 12 || RXReg.test(document.getElementById("estudios-dropdown").value) || PieloReg.test(document.getElementById("estudios-dropdown").value)) {
                         recogerNormal.setDate(recogerNormal.getDate() + cuenta);
 
                         if(tacReg.test(document.getElementById("estudios-dropdown").value) ||  MamReg.test(document.getElementById("estudios-dropdown").value) || OstReg.test(document.getElementById("estudios-dropdown").value)){
@@ -448,7 +449,7 @@ async function impresora() {
                             console.log("no se encontro festivo");
                         }
                     }
-                    if (hour >= 12 || RXReg.test(document.getElementById("estudios-dropdown").value)) {
+                    if (hour >= 12 || RXReg.test(document.getElementById("estudios-dropdown").value) || PieloReg.test(document.getElementById("estudios-dropdown").value)) {
                         recogerNormal.setDate(recogerNormal.getDate() + cuenta);
 
                         if(tacReg.test(document.getElementById("estudios-dropdown").value) ||  MamReg.test(document.getElementById("estudios-dropdown").value) || OstReg.test(document.getElementById("estudios-dropdown").value)){
@@ -494,7 +495,7 @@ async function impresora() {
                             console.log("no se encontro festivo");
                         }
                     }
-                    if (hour >= 12 || RXReg.test(document.getElementById("estudios-dropdown").value)) {
+                    if (hour >= 12 || RXReg.test(document.getElementById("estudios-dropdown").value) || PieloReg.test(document.getElementById("estudios-dropdown").value)) {
                         recogerNormal.setDate(recogerNormal.getDate() + cuenta);
 
                         if(tacReg.test(document.getElementById("estudios-dropdown").value) ||  MamReg.test(document.getElementById("estudios-dropdown").value) || OstReg.test(document.getElementById("estudios-dropdown").value)){
@@ -541,7 +542,7 @@ async function impresora() {
                             console.log("no se encontro festivo");
                         }
                     }
-                    if (hour >= 12 || RXReg.test(document.getElementById("estudios-dropdown").value)) {
+                    if (hour >= 12 || RXReg.test(document.getElementById("estudios-dropdown").value) || PieloReg.test(document.getElementById("estudios-dropdown").value)) {
                         recogerNormal.setDate(recogerNormal.getDate() + cuenta);
 
                         if(tacReg.test(document.getElementById("estudios-dropdown").value) ||  MamReg.test(document.getElementById("estudios-dropdown").value) || OstReg.test(document.getElementById("estudios-dropdown").value)){
@@ -588,7 +589,7 @@ async function impresora() {
                             console.log("no se encontro festivo");
                         }
                     }
-                    if (hour >= 12 || RXReg.test(document.getElementById("estudios-dropdown").value)) {
+                    if (hour >= 12 || RXReg.test(document.getElementById("estudios-dropdown").value) || PieloReg.test(document.getElementById("estudios-dropdown").value)) {
                         recogerNormal.setDate(recogerNormal.getDate() + cuenta);
                         
                         if(tacReg.test(document.getElementById("estudios-dropdown").value) ||  MamReg.test(document.getElementById("estudios-dropdown").value) || OstReg.test(document.getElementById("estudios-dropdown").value)){
