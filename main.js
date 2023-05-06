@@ -77,10 +77,10 @@ function createWindow() {
         width: 500,
         height: 770,
         icon:'assets/hires.ico',
-        resizable: false,
+        resizable: true,
         webPreferences: {
             nodeIntegration: true,
-            devTools: false
+            devTools: true
         }
     })
     win.setMenuBarVisibility(false)
