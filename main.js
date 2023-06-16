@@ -75,7 +75,7 @@ function handleSquirrelEvent(application) {
 function createWindow() {
     const win = new BrowserWindow({
         width: 500,
-        height: 770,
+        height: 650,
         icon:'assets/hires.ico',
         resizable: true,
         webPreferences: {

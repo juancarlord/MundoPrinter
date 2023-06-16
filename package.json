@@ -1,6 +1,6 @@
 {
   "name": "mundoprint",
-  "version": "2.5",
+  "version": "3.0.0",
   "description": "Aplicacion para Mundo Radiologico SAS",
   "main": "main.js",
   "scripts": {
@@ -70,7 +70,7 @@
             },
             "prerelease": false,
             "draft": false,
-            "authToken": "generate new token"
+            "authToken": "token goes here"
           }
         }
       ]

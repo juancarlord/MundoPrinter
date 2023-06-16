@@ -14,8 +14,8 @@ async function impresora() {
     console.log(document.getElementById("estudios-dropdown").value);
     var entidad = document.getElementById('entidad').value;
     var fecha = new Date();
-    fecha.setDate(13);
     console.log(fecha.getDay());
+    console.log(fecha.toLocaleDateString('en-US'))
     if (entidad == "PREPAGADA") {
         var pickupDate = fecha;
         var time;
@@ -55,7 +55,11 @@ async function impresora() {
         }
         else if(pickupDate.getDay() == 0){
             pickupDate.setDate(pickupDate.getDate()+1);
+            if (festivos.includes(pickupDate.toLocaleDateString('en-US'))) {
+                pickupDate.setDate(pickupDate.getDate()+1);
+            }
         }
+     
         newFecha = pickupDate.toLocaleDateString('en-US');
         console.log("el tiempo es de entrega es ", newFecha);
         // switch(fecha.getDay()){
@@ -320,6 +324,9 @@ async function impresora() {
         }
         else if(pickupDate.getDay() == 0){
             pickupDate.setDate(pickupDate.getDate()+1);
+            if (festivos.includes(pickupDate.toLocaleDateString('en-US'))) {
+                pickupDate.setDate(pickupDate.getDate()+1);
+            }
         }
         newFecha = pickupDate.toLocaleDateString('en-US');
         console.log("el tiempo es de entrega es ", newFecha);
@@ -544,6 +551,9 @@ async function impresora() {
         }
         else if(pickupDate.getDay() == 0){
             pickupDate.setDate(pickupDate.getDate()+1);
+            if (festivos.includes(pickupDate.toLocaleDateString('en-US'))) {
+                pickupDate.setDate(pickupDate.getDate()+1);
+            }
         }
         newFecha = pickupDate.toLocaleDateString('en-US');
         console.log("el tiempo es de entrega es ", newFecha);
@@ -803,14 +813,15 @@ async function impresora() {
 
         }
 
-
+    var todaysDate = new Date();
     var documento = document.getElementById('documento').value;
     var cedula = document.getElementById('cedula').value;
     var apellido1 = document.getElementById('apellido1').value;
     var apellido2 = document.getElementById('apellido2').value;
     var nombre1 = document.getElementById('nombre1').value;
     var nombre2 = document.getElementById('nombre2').value;
-    
+    var userCode = document.getElementById('codeid').value;
+
     var estudios = document.getElementById('estudios-dropdown').value;
     var nombreCompleto = nombre1+' '+nombre2+' '+apellido1+' '+apellido2;
     var lineHeight = 1.2, pageWidth = 72, margin = 0.5, maxLineWidth = pageWidth - margin *2, oneLineHeight = (10*lineHeight)/72;
@@ -825,7 +836,7 @@ async function impresora() {
     const doc = new jsPDF({
         orientation: "portrait",
         unit: "mm",
-        format: [76, 410]
+        format: [76, 420]
     });
     doc.setFontSize(14);
     doc.setFont("helvetica", 'bold')
@@ -841,39 +852,43 @@ async function impresora() {
     doc.setFont("helvetica", 'bold')
     doc.text(("Usuario: "+ cedula), 38, 35, 'center')
     doc.text(("Contraseña: "+ cedula), 38, 40, 'center')
-    doc.text(entidad, 50, 45,)
-    doc.text('Nombre del paciente', 2.5, 50)
+    doc.text(("Codigo: "+ userCode), 38, 45, 'center')
+    doc.text(entidad, 50, 50,)
+    doc.text('Nombre del paciente', 2.5, 55)
     doc.setFont("helvetica", 'normal')
-    doc.text(nombreCompleto, 2.5, 55)
+    doc.text(nombreCompleto, 2.5, 60)   
     doc.setFont("helvetica", 'bold')
-    doc.text('Documento', 2.5, 60)
+    doc.text('Documento', 2.5, 65)
     doc.setFont("helvetica", 'normal')
-    doc.text((documento +' '+ cedula), 2.5, 65)
+    doc.text((documento +' '+ cedula), 2.5, 70)
     doc.setFont("helvetica", 'bold')
-    doc.text('Estudio realizado', 2.5, 70)
+    doc.text('Estudio realizado', 2.5, 75)
     doc.setFont("helvetica", 'normal')
     var estudioSplit = doc.splitTextToSize(estudios, maxLineWidth)
     doc.setFontSize(10)
-    doc.text(estudioSplit, 2.5, 75)
+    doc.text(estudioSplit, 2.5, 80)
     doc.setFontSize(12)
-    doc.text('Fecha de realizacion: '+fecha.toLocaleDateString('en-US'),2.5, 92)
+    doc.text('Fecha de realizacion: '+todaysDate.toLocaleDateString('en-US'),2.5, 97)
     if(newFecha.length > 12){//newFecha.length > 12
-        doc.text('Fecha de entrega: ',2.5, 97)    
-        doc.text(newFecha, 2.5, 100)
-        doc.addImage(img.src, 'PNG', 22, 104)
+        //doc.text('Fecha de entrega: ',2.5, 97)    
+        //doc.text(newFecha, 2.5, 100)
+        doc.addImage(img.src, 'PNG', 22, 109)
         doc.setFontSize(8)
-        doc.text('Entrega de resultados: \nLunes a Viernes 8:00 am a 11:30 y de 2:00 pm a 5:30 pm ',38, 137,'center')
-        doc.text('Sábados de 8:00 am a 11:30am',38, 144, 'center')
-        doc.text('Si su dispositivo es Apple debe desbloquear las ventanas\n emergentes para visualizar las imagenes',38, 149, 'center')
+        //doc.text('Entrega de resultados: \nLunes a Viernes 8:00 am a 11:30 y de 2:00 pm a 5:30 pm ',38, 137,'center')
+        //doc.text('Sábados de 8:00 am a 11:30am',38, 144, 'center')
+        doc.text('Si su dispositivo es Apple debe desbloquear las ventanas\n emergentes para visualizar las imagenes',38, 154, 'center')
+        doc.text('Recuerde que los resultados estaran disponibles \n en nuestra plataforma durante 3 meses', 38, 162, 'center')
         
     }
     else {
-    doc.text('Fecha de entrega: '+newFecha,2.5, 97)
-    doc.addImage(img.src, 'PNG', 22, 98)
+    //doc.text('Fecha de entrega: '+newFecha,2.5, 97)
+    console.log('pase por aqui')
+    doc.addImage(img.src, 'PNG', 22, 103)
     doc.setFontSize(8)
-    doc.text('Entrega de resultados: \nLunes a Viernes 8:00 am a 11:30 y de 2:00 pm a 5:30 pm ',38, 127,'center')
-    doc.text('Sábados de 8:00 am a 11:30am',38, 134, 'center')
-    doc.text('Si su dispositivo es Apple debe desbloquear las ventanas \n emergentes para visualizar las imagenes',38, 139, 'center')
+    //doc.text('Entrega de resultados: \nLunes a Viernes 8:00 am a 11:30 y de 2:00 pm a 5:30 pm ',38, 127,'center')
+    //doc.text('Sábados de 8:00 am a 11:30am',38, 134, 'center')
+    doc.text('Si su dispositivo es Apple debe desbloquear las ventanas \n emergentes para visualizar las imagenes',38, 144, 'center')
+    doc.text('Recuerde que los resultados estaran disponibles \n en nuestra plataforma durante 3 meses', 38, 156, 'center')
     }
     doc.save("resultados.pdf"); // will save the file in the current working directory
     doc.close();
@@ -890,11 +905,7 @@ async function impresora() {
     document.getElementById("apellido2").value = ""
     document.getElementById("nombre1").value = ""
     document.getElementById("nombre2").value = ""
-    document.getElementById("ignore1").value = ""
-    document.getElementById("ignore2").value = ""
-    document.getElementById("ignore3").value = ""
-    document.getElementById("ignore4").value = ""
-    document.getElementById("ignore5").value = ""
+    document.getElementById("codeid").value = ""
     document.getElementById("cedula").focus();
 
     
