@@ -10,6 +10,7 @@ async function impresora() {
     var OstReg = new RegExp('^'+ "OSTEODENSITOMETRIA");
     var RXReg = new RegExp('^'+ "RX");
     var PieloReg = new RegExp('^' + "PIELOGRAFIA");
+    var Electro = new RegExp('^' + "ELECTROCARDIOGRAMA");
     console.log(RXReg.test(document.getElementById("estudios-dropdown").value));
     console.log(document.getElementById("estudios-dropdown").value);
     var entidad = document.getElementById('entidad').value;
@@ -21,47 +22,21 @@ async function impresora() {
         var time;
         var extraDays = 0;
         if (tacReg.test(document.getElementById("estudios-dropdown").value)) {
-            time = 3;
+            time = "3 Días hábiles";
         }
         else if (OstReg.test(document.getElementById("estudios-dropdown").value)){
-            time = 3;
+            time = "3 Días hábiles";
+        }
+        else if(Electro.test(document.getElementById("estudios-dropdown").value)){
+            time = "2 Días hábiles";
         }
         else if (MamReg.test(document.getElementById("estudios-dropdown").value)) {
-            time = 3;
+            time = "3 Días hábiles";
         }
         else {
-            time = 3;
+            time = "3 Días hábiles";
         }
-        for (let index = 0; index < time; index++){
-            pickupDate.setDate(pickupDate.getDate()+1);
-            parsedDate = pickupDate.toLocaleDateString('en-US');
-            if(festivos.includes(parsedDate)){
-                extraDays++;
-                console.log("Encontre ",extraDays," festivo/s");
-            }
-            if (pickupDate.getDay() == 6 || pickupDate.getDay() == 0) {
-                extraDays++;
-                console.log(parsedDate, " es fin de semana");
-            }
-            console.log("paso por ", parsedDate);
-        }
-        if (extraDays != 0) {
-            pickupDate.setDate(pickupDate.getDate() + extraDays)
-            console.log("Pase por aca y agregue ",extraDays, " dias");
-        }
-        console.log("El dia de la semana es ", pickupDate.getDay());
-        if (pickupDate.getDay() == 6) {
-            pickupDate.setDate(pickupDate.getDate()+2);
-        }
-        else if(pickupDate.getDay() == 0){
-            pickupDate.setDate(pickupDate.getDate()+1);
-            if (festivos.includes(pickupDate.toLocaleDateString('en-US'))) {
-                pickupDate.setDate(pickupDate.getDate()+1);
-            }
-        }
-     
-        newFecha = pickupDate.toLocaleDateString('en-US');
-        console.log("el tiempo es de entrega es ", newFecha);
+        //console.log("el tiempo es de entrega es ", newFecha);
         // switch(fecha.getDay()){
         //     case 1:
         //         var recogerNormal = new Date();
@@ -290,46 +265,21 @@ async function impresora() {
         var time;
         var extraDays = 0;
         if (tacReg.test(document.getElementById("estudios-dropdown").value)) {
-            time = 5;
+            time = "5 Días hábiles";
         }
         else if (OstReg.test(document.getElementById("estudios-dropdown").value)){
-            time = 4;
+            time = "4 Días hábiles";
+        }
+        else if(Electro.test(document.getElementById("estudios-dropdown").value)){
+            time = "3 Días hábiles";
         }
         else if (MamReg.test(document.getElementById("estudios-dropdown").value)) {
-            time = 4;
+            time = "4 Días hábiles";
         }
         else {
-            time = 5;
+            time = "5 Días hábiles";
         }
-        for (let index = 0; index < time; index++){
-            pickupDate.setDate(pickupDate.getDate()+1);
-            parsedDate = pickupDate.toLocaleDateString('en-US');
-            if(festivos.includes(parsedDate)){
-                extraDays++;
-                console.log("Encontre ",extraDays," festivo/s");
-            }
-            if (pickupDate.getDay() == 6 || pickupDate.getDay() == 0) {
-                extraDays++;
-                console.log(parsedDate, " es fin de semana");
-            }
-            console.log("paso por ", parsedDate);
-        }
-        if (extraDays != 0) {
-            pickupDate.setDate(pickupDate.getDate() + extraDays)
-            console.log("Pase por aca y agregue ",extraDays, " dias");
-        }
-        console.log("El dia de la semana es ", pickupDate.getDay());
-        if (pickupDate.getDay() == 6) {
-            pickupDate.setDate(pickupDate.getDate()+2);
-        }
-        else if(pickupDate.getDay() == 0){
-            pickupDate.setDate(pickupDate.getDate()+1);
-            if (festivos.includes(pickupDate.toLocaleDateString('en-US'))) {
-                pickupDate.setDate(pickupDate.getDate()+1);
-            }
-        }
-        newFecha = pickupDate.toLocaleDateString('en-US');
-        console.log("el tiempo es de entrega es ", newFecha);
+        //console.log("el tiempo es de entrega es ", newFecha);
         // switch(fecha.getDay()){
         //     case 1:
         //         var recogerNormal = new Date();
@@ -517,46 +467,21 @@ async function impresora() {
         var time;
         var extraDays = 0;
         if (tacReg.test(document.getElementById("estudios-dropdown").value)) {
-            time = 2;
+            time = "2 Días hábiles";
         }
         else if (OstReg.test(document.getElementById("estudios-dropdown").value)){
-            time = 2;
+            time = "2 Días hábiles";
+        }
+        else if(Electro.test(document.getElementById("estudios-dropdown").value)){
+            time = "1 Día hábil";
         }
         else if (MamReg.test(document.getElementById("estudios-dropdown").value)) {
-            time = 2;
+            time = "2 Días hábiles";
         }
         else {
-            time = 1;
+            time = "1 Día hábil";
         }
-        for (let index = 0; index < time; index++){
-            pickupDate.setDate(pickupDate.getDate()+1);
-            parsedDate = pickupDate.toLocaleDateString('en-US');
-            if(festivos.includes(parsedDate)){
-                extraDays++;
-                console.log("Encontre ",extraDays," festivo/s");
-            }
-            if (pickupDate.getDay() == 6 || pickupDate.getDay() == 0) {
-                extraDays++;
-                console.log(parsedDate, " es fin de semana");
-            }
-            console.log("paso por ", parsedDate);
-        }
-        if (extraDays != 0) {
-            pickupDate.setDate(pickupDate.getDate() + extraDays)
-            console.log("Pase por aca y agregue ",extraDays, " dias");
-        }
-        console.log("El dia de la semana es ", pickupDate.getDay());
-        if (pickupDate.getDay() == 6) {
-            pickupDate.setDate(pickupDate.getDate()+2);
-        }
-        else if(pickupDate.getDay() == 0){
-            pickupDate.setDate(pickupDate.getDate()+1);
-            if (festivos.includes(pickupDate.toLocaleDateString('en-US'))) {
-                pickupDate.setDate(pickupDate.getDate()+1);
-            }
-        }
-        newFecha = pickupDate.toLocaleDateString('en-US');
-        console.log("el tiempo es de entrega es ", newFecha);
+        //console.log("el tiempo es de entrega es ", newFecha);
             // switch (fecha.getDay()) {
             //     case 1:
             //         var recogerNormal = new Date();
@@ -869,27 +794,27 @@ async function impresora() {
     doc.text(estudioSplit, 2.5, 80)
     doc.setFontSize(12)
     doc.text('Fecha de realizacion: '+todaysDate.toLocaleDateString('en-US'),2.5, 97)
-    if(newFecha.length > 12){//newFecha.length > 12
-        //doc.text('Fecha de entrega: ',2.5, 97)    
-        //doc.text(newFecha, 2.5, 100)
-        doc.addImage(img.src, 'PNG', 22, 109)
-        doc.setFontSize(8)
-        //doc.text('Entrega de resultados: \nLunes a Viernes 8:00 am a 11:30 y de 2:00 pm a 5:30 pm ',38, 137,'center')
-        //doc.text('Sábados de 8:00 am a 11:30am',38, 144, 'center')
-        doc.text('Si su dispositivo es Apple debe desbloquear las ventanas\n emergentes para visualizar las imagenes',38, 154, 'center')
-        doc.text('Recuerde que los resultados estaran disponibles \n en nuestra plataforma durante 3 meses', 38, 162, 'center')
+    // if(newFecha.length > 12){//newFecha.length > 12
+    //     doc.text('Fecha de entrega: '+time,2.5, 97)    
+    //     //doc.text(newFecha, 2.5, 100)
+    //     doc.addImage(img.src, 'PNG', 22, 109)
+    //     doc.setFontSize(8)
+    //     //doc.text('Entrega de resultados: \nLunes a Viernes 8:00 am a 11:30 y de 2:00 pm a 5:30 pm ',38, 137,'center')
+    //     //doc.text('Sábados de 8:00 am a 11:30am',38, 144, 'center')
+    //     doc.text('Recuerde que los resultados estaran disponibles \n en nuestra plataforma durante 3 meses', 38, 154, 'center')
+    //     doc.text('Si su dispositivo es Apple debe desbloquear las ventanas\n emergentes para visualizar las imagenes',38, 162, 'center')
         
-    }
-    else {
-    //doc.text('Fecha de entrega: '+newFecha,2.5, 97)
+    // }
+    // else {
+    doc.text('Fecha de entrega: '+time,2.5, 107)
     console.log('pase por aqui')
-    doc.addImage(img.src, 'PNG', 22, 103)
-    doc.setFontSize(8)
+    doc.addImage(img.src, 'PNG', 22, 113)
+    doc.setFontSize(9)
     //doc.text('Entrega de resultados: \nLunes a Viernes 8:00 am a 11:30 y de 2:00 pm a 5:30 pm ',38, 127,'center')
     //doc.text('Sábados de 8:00 am a 11:30am',38, 134, 'center')
-    doc.text('Si su dispositivo es Apple debe desbloquear las ventanas \n emergentes para visualizar las imagenes',38, 144, 'center')
-    doc.text('Recuerde que los resultados estaran disponibles \n en nuestra plataforma durante 3 meses', 38, 156, 'center')
-    }
+    doc.text('Recuerde que los resultados estaran disponibles \n en nuestra plataforma durante 3 meses', 38, 144, 'center')
+    doc.text('Si su dispositivo es Apple debe desbloquear \n las ventanas emergentes para visualizar \n las imagenes',38, 154, 'center')
+    // }
     doc.save("resultados.pdf"); // will save the file in the current working directory
     doc.close();
 
