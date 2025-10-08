@@ -812,7 +812,7 @@ async function impresora() {
     doc.setFontSize(9)
     //doc.text('Entrega de resultados: \nLunes a Viernes 8:00 am a 11:30 y de 2:00 pm a 5:30 pm ',38, 127,'center')
     //doc.text('Sábados de 8:00 am a 11:30am',38, 134, 'center')
-    doc.text('Recuerde que los resultados estaran disponibles \n en nuestra plataforma durante 3 meses', 38, 144, 'center')
+    doc.text('Recuerde que los resultados estaran disponibles \n en nuestra plataforma durante 6 meses', 38, 144, 'center')
     doc.text('Si su dispositivo es Apple debe desbloquear \n las ventanas emergentes para visualizar \n las imagenes',38, 154, 'center')
     // }
     doc.save("resultados.pdf"); // will save the file in the current working directory
